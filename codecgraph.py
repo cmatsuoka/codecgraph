@@ -1,6 +1,8 @@
 
 import re, sys
 
+ALL_NODES = False
+
 def indentlevel(line):
 	"""Return the indent level of a line"""
 	m = re_indent.match(line)
@@ -26,9 +28,12 @@ def parse_items(level, lines):
 
 class Node:
 	node_info_re = re.compile('^Node (0x[0-9a-f]*) \[(.*?)\] wcaps 0x[0-9a-f]*?: (.*)$')
-	def __init__(self, item, subitems):
+
+	def __init__(self, codec, item, subitems):
 		self.item = item
 		self.subitems = subitems
+		self.codec = codec
+
 		fields = {}
 
 		# split first line and get some fields
@@ -53,7 +58,7 @@ class Node:
 		conn = fields.get('Connection', ('0', []))
 
 		number,items = conn
-		self.num_connections = int(number)
+		self.num_inputs = int(number)
 		conns = []
 		self.active_conn = None
 		for i,sub in items:
@@ -64,44 +69,144 @@ class Node:
 				conns.append(nid)
 				if active:
 					self.active_conn = nid
-		assert len(conns) == self.num_connections
-		self.connections = conns
+		assert len(conns) == self.num_inputs
+		self.inputs = conns
 
-		if not self.active_conn and self.num_connections == 1:
-			self.active_conn = self.connections[0]
+		if not self.active_conn and self.num_inputs == 1:
+			self.active_conn = self.inputs[0]
 
+		self.outputs = []
+
+	def new_output(self, nid):
+		self.outputs.append(nid)
+
+	def input_nodes(self):
+		for c in self.inputs:
+			yield self.codec.nodes[c]
+
+	def is_divided(self):
+		if self.type == 'Pin Complex':
+			return True
+		
+		return False
 
 	def idstring(self):
 		return 'nid-%02x' % (self.nid)
 
+	def has_outamp(self):
+		return 'Amp-Out' in self.wcaps
+
+	def outamp_id(self):
+		return '"%s-ampout"' % (self.idstring())
+
 	def out_id(self):
-		return self.main_id()
+		if self.has_outamp():
+			return self.outamp_id()
+
+		return self.outamp_next_id()
+
+	def has_inamp(self):
+		return 'Amp-In' in self.wcaps
+
+	def inamp_id(self):
+		return '"%s-ampin"' % (self.idstring())
 
 	def in_id(self):
-		return self.main_id()
+		if self.has_inamp():
+			return self.inamp_id()
+
+		return self.inamp_next_id()
 
 	def main_id(self):
+		assert not self.is_divided()
 		return '"%s"' % (self.idstring())
+
+	def main_input_id(self):
+		assert self.is_divided()
+		return '"%s-in"' % (self.idstring())
+
+	def main_output_id(self):
+		assert self.is_divided()
+		return '"%s-out"' % (self.idstring())
+
+	def inamp_next_id(self):
+		"""ID of the node where the In-Amp would be connected"""
+		if self.is_divided():
+			return self.main_input_id()
+
+		return self.main_id()
+
+	def outamp_next_id(self):
+		"""ID of the node where the Out-Amp would be connected"""
+		if self.is_divided():
+			return self.main_output_id()
+
+		return self.main_id()
 
 	def label(self):
 		return '"0x%02x [%s]"' % (self.nid, self.type)
 
-	def dump_graph(self, codec, f):
+	def main_color(self):
 		typecolors = {
 			'Audio Output':'blue',
 			'Audio Input':'red',
 			'Pin Complex':'green'
 		}
-		color = typecolors.get(self.type, 'black')
+		return typecolors.get(self.type, 'black')
 
+	def show_input(self):
+		return ALL_NODES or len(self.inputs) > 0
+
+	def show_output(self):
+		return ALL_NODES or len(self.outputs) > 0
+
+	def dump_main(self, f):
+		if not self.is_divided():
+			if self.show_input() or self.show_output():
+				f.write('  %s [label = %s, color=%s, shape=box];\n' %
+						(self.main_id(),
+						 self.label(),
+						 self.main_color()))
+		else:
+			if self.show_input():
+				f.write('  %s [label = %s, color=%s, shape=box];\n' %
+						(self.main_input_id(),
+						 self.label(),
+						 self.main_color()))
+			if self.show_output():
+				f.write('  %s [label = %s, color=%s, shape=box];\n' %
+						(self.main_output_id(),
+						 self.label(),
+						 self.main_color()))
+
+	def dump_amps(self, f):
+		def show_amp(id):
+			f.write('  %s [label = "A", shape=circle];\n' % (id))
+
+		if self.show_output() and self.has_outamp():
+			show_amp(self.outamp_id())
+			f.write('  %s -> %s [arrowsize=0.5, weight=2.0];\n' % (self.outamp_next_id(), self.outamp_id()))
+		if self.show_input() and self.has_inamp():
+			show_amp(self.inamp_id())
+			f.write('  %s -> %s [arrowsize=0.5, weight=2.0];\n' % (self.inamp_id(), self.inamp_next_id()))
+
+
+	def is_conn_active(self, c):
+		if self.type == 'Audio Mixer':
+			return True
+		if c == self.active_conn:
+			return True
+		return False
+
+	def dump_graph(self, f):
+		codec = self.codec
 		f.write('subgraph "%s" {\n' % (self.idstring()))
-		f.write('  %s [label = %s, color=%s];\n' %
-				(self.main_id(), self.label(), color))
+		self.dump_main(f)
+		self.dump_amps(f)
 		f.write('}\n')
 
-		for c in self.connections:
-			origin = codec.nodes[c]
-			if c == self.active_conn:
+		for origin in self.input_nodes():
+			if self.is_conn_active(origin.nid):
 				attrs="[color=black]"
 			else:
 				attrs="[color=gray]"
@@ -119,7 +224,7 @@ class CodecInfo:
 
 		for item,subitems in parse_items(-1, lines):
 			if item.startswith('Node '):
-				n = Node(item, subitems)
+				n = Node(self, item, subitems)
 				self.nodes[n.nid] = n
 			elif ': ' in item:
 				f,v = item.split(': ', 1)
@@ -128,17 +233,24 @@ class CodecInfo:
 				line = total_lines-len(lines)
 				sys.stderr.write("%d: Unknown item: %s\n" % (line, item))
 
+		self.create_out_lists()
+
+	def create_out_lists(self):
+		for n in self.nodes.values():
+			for i in n.input_nodes():
+				i.new_output(n.nid)
+
 	def dump(self):
 		print "Codec: %s" % (self.fields['Codec'])
 		print "Nodes: %d" % (len(self.nodes))
 		for n in self.nodes.values():
 			print "Node: 0x%02x" % (n.nid),
-			print " %d conns" % (n.num_connections)
+			print " %d conns" % (n.num_inputs)
 
 	def dump_graph(self, f):
 		f.write('digraph {\n')
 		for n in self.nodes.values():
-			n.dump_graph(self, f)
+			n.dump_graph(f)
 		f.write('}\n')
 
 def main(argv):
