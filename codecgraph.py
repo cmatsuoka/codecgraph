@@ -1,7 +1,7 @@
 
 import re, sys
 
-ALL_NODES = True
+ALL_NODES = False
 
 def indentlevel(line):
 	"""Return the indent level of a line"""
@@ -151,7 +151,7 @@ class Node:
 		return self.main_id()
 
 	def label(self):
-		return '"0x%02x [%s]"' % (self.nid, self.type)
+		return '"0x%02x"' % (self.nid)
 
 	def main_color(self):
 		typecolors = {
@@ -167,28 +167,40 @@ class Node:
 	def show_output(self):
 		return ALL_NODES or len(self.outputs) > 0
 
+	def additional_attrs(self):
+		default_attrs = [ ('shape', 'box') ]
+		shape_dict = {
+			'Audio Selector':[ ('shape', 'parallelogram'),
+			                   ('orientation', '0')  ],
+			'Audio Mixer':[ ('shape', 'hexagon') ],
+		}
+		return shape_dict.get(self.type, default_attrs)
+
+	def new_node(self, f, id, attrs):
+		f.write(' %s ' % (id))
+		if attrs:
+			attrstr = ', '.join('%s=%s' % (f,v) for f,v in attrs)
+			f.write('[%s]' % (attrstr))
+		f.write('\n')
+
 	def dump_main(self, f):
+		attrs = [('label', self.label()),
+			 ('color', self.main_color()),
+			]
+		attrs.extend(self.additional_attrs())
+
 		if not self.is_divided():
 			if self.show_input() or self.show_output():
-				f.write('  %s [label = %s, color=%s, shape=box];\n' %
-						(self.main_id(),
-						 self.label(),
-						 self.main_color()))
+				self.new_node(f, self.main_id(), attrs)
 		else:
 			if self.show_input():
-				f.write('  %s [label = %s, color=%s, shape=box];\n' %
-						(self.main_input_id(),
-						 self.label(),
-						 self.main_color()))
+				self.new_node(f, self.main_input_id(), attrs)
 			if self.show_output():
-				f.write('  %s [label = %s, color=%s, shape=box];\n' %
-						(self.main_output_id(),
-						 self.label(),
-						 self.main_color()))
+				self.new_node(f, self.main_output_id(), attrs)
 
 	def dump_amps(self, f):
 		def show_amp(id, type):
-			f.write('  %s [label = "%s-A", shape=diamond];\n' % (id, type))
+			f.write('  %s [label = "Amp", shape=triangle orientation=-90];\n' % (id))
 
 		if self.show_output() and self.has_outamp():
 			show_amp(self.outamp_id(), "Out")
@@ -216,7 +228,7 @@ class Node:
 			if self.is_conn_active(origin.nid):
 				attrs="[color=black]"
 			else:
-				attrs="[color=gray]"
+				attrs="[color=gray style=dashed]"
 			f.write('%s -> %s %s;\n' % (origin.out_id(), self.in_id(), attrs))
 		
 
@@ -256,6 +268,9 @@ class CodecInfo:
 
 	def dump_graph(self, f):
 		f.write('digraph {\n')
+		f.write("""rankdir=LR
+		ranksep=1.0
+		""")
 		for n in self.nodes.values():
 			n.dump_graph(f)
 		f.write('}\n')
