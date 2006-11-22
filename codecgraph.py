@@ -25,7 +25,7 @@ def parse_items(level, lines):
 		yield parse_item(linelvl, lines)
 
 class Node:
-	node_info_re = re.compile('^Node (0x[0-9a-f]*) \[(.*?)\]')
+	node_info_re = re.compile('^Node (0x[0-9a-f]*) \[(.*?)\] wcaps 0x[0-9a-f]*?: (.*)$')
 	def __init__(self, item, subitems):
 		self.item = item
 		self.subitems = subitems
@@ -36,6 +36,9 @@ class Node:
 		m = self.node_info_re.match(item)
 		self.nid = int(m.group(1), 16)
 		self.type = m.group(2)
+		wcapstr = m.group(3)
+
+		self.wcaps = wcapstr.split()
 
 		for item,subitems in self.subitems:
 			# Parse node fields
@@ -69,7 +72,16 @@ class Node:
 
 
 	def idstring(self):
-		return '"0x%02x"' % (self.nid)
+		return 'nid-%02x' % (self.nid)
+
+	def out_id(self):
+		return self.main_id()
+
+	def in_id(self):
+		return self.main_id()
+
+	def main_id(self):
+		return '"%s"' % (self.idstring())
 
 	def label(self):
 		return '"0x%02x [%s]"' % (self.nid, self.type)
@@ -82,16 +94,18 @@ class Node:
 		}
 		color = typecolors.get(self.type, 'black')
 
-		f.write('%s [label = %s, color=%s];\n' %
-				(self.idstring(), self.label(), color))
+		f.write('subgraph "%s" {\n' % (self.idstring()))
+		f.write('  %s [label = %s, color=%s];\n' %
+				(self.main_id(), self.label(), color))
+		f.write('}\n')
+
 		for c in self.connections:
 			origin = codec.nodes[c]
-			print "// conn: %r. act: %r" % (c, self.active_conn)
 			if c == self.active_conn:
 				attrs="[color=black]"
 			else:
 				attrs="[color=gray]"
-			f.write('%s -> %s %s;\n' % (origin.idstring(), self.idstring(), attrs))
+			f.write('%s -> %s %s;\n' % (origin.out_id(), self.in_id(), attrs))
 		
 
 re_indent = re.compile("^ *")
@@ -101,6 +115,7 @@ class CodecInfo:
 		self.fields = {}
 		self.nodes = {}
 		lines = f.readlines()
+		total_lines = len(lines)
 
 		for item,subitems in parse_items(-1, lines):
 			if item.startswith('Node '):
@@ -110,7 +125,8 @@ class CodecInfo:
 				f,v = item.split(': ', 1)
 				self.fields[f] = v
 			else:
-				sys.stderr.write("Unknown item: %s\n" % (item))
+				line = total_lines-len(lines)
+				sys.stderr.write("%d: Unknown item: %s\n" % (line, item))
 
 	def dump(self):
 		print "Codec: %s" % (self.fields['Codec'])
