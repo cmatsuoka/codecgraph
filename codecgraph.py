@@ -1,7 +1,7 @@
 
 import re, sys
 
-ALL_NODES = False
+ALL_NODES = True
 
 def indentlevel(line):
 	"""Return the indent level of a line"""
@@ -100,6 +100,9 @@ class Node:
 		return '"%s-ampout"' % (self.idstring())
 
 	def out_id(self):
+		if self.is_divided():
+			return self.main_output_id()
+
 		if self.has_outamp():
 			return self.outamp_id()
 
@@ -112,6 +115,10 @@ class Node:
 		return '"%s-ampin"' % (self.idstring())
 
 	def in_id(self):
+
+		if self.is_divided():
+			return self.main_input_id()
+
 		if self.has_inamp():
 			return self.inamp_id()
 
@@ -132,14 +139,14 @@ class Node:
 	def inamp_next_id(self):
 		"""ID of the node where the In-Amp would be connected"""
 		if self.is_divided():
-			return self.main_input_id()
+			return self.main_output_id()
 
 		return self.main_id()
 
 	def outamp_next_id(self):
 		"""ID of the node where the Out-Amp would be connected"""
 		if self.is_divided():
-			return self.main_output_id()
+			return self.main_input_id()
 
 		return self.main_id()
 
@@ -180,14 +187,14 @@ class Node:
 						 self.main_color()))
 
 	def dump_amps(self, f):
-		def show_amp(id):
-			f.write('  %s [label = "A", shape=circle];\n' % (id))
+		def show_amp(id, type):
+			f.write('  %s [label = "%s-A", shape=diamond];\n' % (id, type))
 
 		if self.show_output() and self.has_outamp():
-			show_amp(self.outamp_id())
+			show_amp(self.outamp_id(), "Out")
 			f.write('  %s -> %s [arrowsize=0.5, weight=2.0];\n' % (self.outamp_next_id(), self.outamp_id()))
 		if self.show_input() and self.has_inamp():
-			show_amp(self.inamp_id())
+			show_amp(self.inamp_id(), "In")
 			f.write('  %s -> %s [arrowsize=0.5, weight=2.0];\n' % (self.inamp_id(), self.inamp_next_id()))
 
 
