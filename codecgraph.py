@@ -28,6 +28,7 @@ def parse_items(level, lines):
 
 class Node:
 	node_info_re = re.compile('^Node (0x[0-9a-f]*) \[(.*?)\] wcaps 0x[0-9a-f]*?: (.*)$')
+	final_hex_re = re.compile(' *(0x[0-9a-f]*)$')
 
 	def __init__(self, codec, item, subitems):
 		self.item = item
@@ -49,7 +50,20 @@ class Node:
 			# Parse node fields
 			if ': ' in item:
 				f,v = item.split(': ', 1)
-				fields[f] = v,subitems
+
+				# strip hex number at the end.
+				# some fields, such as Pincap & Pin Default,
+				# have an hex number in the end
+				m = self.final_hex_re.search(f)
+				if m:
+					f = self.final_hex_re.sub('', f)
+
+					# store the hex value and the
+					# string, on different keys
+					fields[f+'-hex'] = m.group(1),subitems
+					fields[f] = v,subitems
+				else:
+					fields[f] = v,subitems
 			else:
 				sys.stderr("Unknown node item: %s" % (item))
 
@@ -151,15 +165,15 @@ class Node:
 		return self.main_id()
 
 	def label(self):
-		return '"0x%02x"' % (self.nid)
+		r = '0x%02x' % (self.nid)
+		print '// %r' % (self.fields)
+		pdef = self.fields.get('Pin Default')
+		if pdef:
+			pdef,subdirs = pdef
+			r += '\\n%s' % (pdef)
 
-	def main_color(self):
-		typecolors = {
-			'Audio Output':'blue',
-			'Audio Input':'red',
-			'Pin Complex':'green'
-		}
-		return typecolors.get(self.type, 'black')
+		r = '"%s"' % (r)
+		return r
 
 	def show_input(self):
 		return ALL_NODES or len(self.inputs) > 0
@@ -168,8 +182,14 @@ class Node:
 		return ALL_NODES or len(self.outputs) > 0
 
 	def additional_attrs(self):
-		default_attrs = [ ('shape', 'box') ]
+		default_attrs = [ ('shape', 'box'), ('color', 'black') ]
 		shape_dict = {
+			'Audio Input':[ ('color', 'red'),
+			                ('shape', 'ellipse') ],
+			'Audio Output':[ ('color', 'blue'),
+			                 ('shape', 'ellipse') ],
+			'Pin Complex':[ ('color', 'green'),
+			                ('shape', 'box') ],
 			'Audio Selector':[ ('shape', 'parallelogram'),
 			                   ('orientation', '0')  ],
 			'Audio Mixer':[ ('shape', 'hexagon') ],
@@ -184,9 +204,7 @@ class Node:
 		f.write('\n')
 
 	def dump_main(self, f):
-		attrs = [('label', self.label()),
-			 ('color', self.main_color()),
-			]
+		attrs = [ ('label', self.label()) ]
 		attrs.extend(self.additional_attrs())
 
 		if not self.is_divided():
@@ -199,15 +217,14 @@ class Node:
 				self.new_node(f, self.main_output_id(), attrs)
 
 	def dump_amps(self, f):
-		def show_amp(id, type):
-			f.write('  %s [label = "Amp", shape=triangle orientation=-90];\n' % (id))
+		def show_amp(id, type, frm, to):
+			f.write('  %s [label = "", shape=triangle orientation=-90];\n' % (id))
+			f.write('  %s -> %s [arrowsize=0.5, arrowtail=dot, weight=2.0];\n' % (frm, to))
 
 		if self.show_output() and self.has_outamp():
-			show_amp(self.outamp_id(), "Out")
-			f.write('  %s -> %s [arrowsize=0.5, weight=2.0];\n' % (self.outamp_next_id(), self.outamp_id()))
+			show_amp(self.outamp_id(), "Out", self.outamp_next_id(), self.outamp_id())
 		if self.show_input() and self.has_inamp():
-			show_amp(self.inamp_id(), "In")
-			f.write('  %s -> %s [arrowsize=0.5, weight=2.0];\n' % (self.inamp_id(), self.inamp_next_id()))
+			show_amp(self.inamp_id(), "In", self.inamp_id(), self.inamp_next_id())
 
 
 	def is_conn_active(self, c):
@@ -226,7 +243,7 @@ class Node:
 
 		for origin in self.input_nodes():
 			if self.is_conn_active(origin.nid):
-				attrs="[color=black]"
+				attrs="[color=gray20]"
 			else:
 				attrs="[color=gray style=dashed]"
 			f.write('%s -> %s %s;\n' % (origin.out_id(), self.in_id(), attrs))
