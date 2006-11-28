@@ -236,7 +236,10 @@ class Node:
 
 	def dump_graph(self, f):
 		codec = self.codec
-		f.write('subgraph "%s" {\n' % (self.idstring()))
+		if self.is_divided(): name = self.idstring()
+		else: name = "cluster-%s" % (self.idstring())
+		f.write('subgraph "%s" {\n' % (name))
+		f.write('  pencolor="gray80"\n')
 		self.dump_main(f)
 		self.dump_amps(f)
 		f.write('}\n')
