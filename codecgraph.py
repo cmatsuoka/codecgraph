@@ -185,6 +185,11 @@ class Node:
 
 		return self.main_id()
 
+	def wcaps_label(self):
+		not_shown = ['Amp-In', 'Amp-Out']
+		show = [cap for cap in self.wcaps if not cap in not_shown]
+		return ' '.join(show)
+
 	def label(self):
 		r = '0x%02x' % (self.nid)
 		print '// %r' % (self.fields)
@@ -192,6 +197,13 @@ class Node:
 		if pdef:
 			pdef,subdirs = pdef
 			r += '\\n%s' % (pdef)
+
+		r += '\\n%s' % (self.wcaps_label())
+
+		pincap = self.fields.get('Pincap')
+		if pincap:
+			pincap,subdirs = pincap
+			r += '\\n%s' % (pincap)
 
 		r = '"%s"' % (r)
 		return r
