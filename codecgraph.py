@@ -254,13 +254,15 @@ class Node:
 			if self.show_output():
 				self.new_node(f, self.main_output_id(), attrs)
 
-	def dump_amps(self, f):
-		def show_amp(id, type, frm, to, label=''):
-			f.write('  %s [label = "%s", shape=triangle orientation=-90];\n' % (id, label))
-			f.write('  %s -> %s [arrowsize=0.5, arrowtail=dot, weight=2.0];\n' % (frm, to))
+	def show_amp(self, f, id, type, frm, to, label=''):
+		f.write('  %s [label = "%s", shape=triangle orientation=-90];\n' % (id, label))
+		f.write('  %s -> %s [arrowsize=0.5, arrowtail=dot, weight=2.0];\n' % (frm, to))
 
+	def dump_out_amps(self, f):
 		if self.show_output() and self.has_outamp():
-			show_amp(self.outamp_id(), "Out", self.outamp_next_id(), self.outamp_id())
+			self.show_amp(f, self.outamp_id(), "Out", self.outamp_next_id(), self.outamp_id())
+
+	def dump_in_amps(self, f):
 		if self.show_input() and self.has_inamp():
 
 			if self.many_ampins():
@@ -270,7 +272,11 @@ class Node:
 
 			for label,origin in amporigins:
 				ampid = self.inamp_id(origin)
-				show_amp(ampid, "In", ampid, self.inamp_next_id(), label)
+				self.show_amp(f, ampid, "In", ampid, self.inamp_next_id(), label)
+
+	def dump_amps(self, f):
+		self.dump_out_amps(f)
+		self.dump_in_amps(f)
 
 	def is_conn_active(self, c):
 		if self.type == 'Audio Mixer':
