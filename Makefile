@@ -1,7 +1,8 @@
 
 DOTTY = dot
 
-codecs = claudio boiko boto-120l fbl hp hp-samba alc861 hp-samba-6stack-dig
+codecs = claudio boiko boto-120l fbl hp hp-samba alc861 \
+	 hp-samba-6stack-dig hp-samba-6stack-dig-fullvol
 
 allnames = $(addprefix codecs/, $(codecs))
 
