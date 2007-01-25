@@ -241,18 +241,26 @@ class Node:
 			f.write('[%s]' % (attrstr))
 		f.write('\n')
 
-	def dump_main(self, f):
+	def dump_main_input(self, f):
+		if self.show_input():
+			self.new_node(f, self.main_input_id(), self.get_attrs())
+
+	def dump_main_output(self, f):
+		if self.show_output():
+			self.new_node(f, self.main_output_id(), self.get_attrs())
+
+	def get_attrs(self):
 		attrs = [ ('label', self.label()) ]
 		attrs.extend(self.additional_attrs())
+		return attrs
 
+	def dump_main(self, f):
 		if not self.is_divided():
 			if self.show_input() or self.show_output():
-				self.new_node(f, self.main_id(), attrs)
+				self.new_node(f, self.main_id(), self.get_attrs())
 		else:
-			if self.show_input():
-				self.new_node(f, self.main_input_id(), attrs)
-			if self.show_output():
-				self.new_node(f, self.main_output_id(), attrs)
+			self.dump_main_input()
+			self.dump_main_output()
 
 	def show_amp(self, f, id, type, frm, to, label=''):
 		f.write('  %s [label = "%s", shape=triangle orientation=-90];\n' % (id, label))
@@ -287,13 +295,25 @@ class Node:
 
 	def dump_graph(self, f):
 		codec = self.codec
-		if self.is_divided(): name = self.idstring()
-		else: name = "cluster-%s" % (self.idstring())
-		f.write('subgraph "%s" {\n' % (name))
-		f.write('  pencolor="gray80"\n')
-		self.dump_main(f)
-		self.dump_amps(f)
-		f.write('}\n')
+		name = "cluster-%s" % (self.idstring())
+		if self.is_divided():
+			f.write('subgraph "%s-in" {\n' % (name))
+			f.write('  pencolor="gray80"\n')
+			self.dump_main_input(f)
+			self.dump_in_amps(f)
+			f.write('}\n')
+
+			f.write('subgraph "%s-out" {\n' % (name))
+			f.write('  pencolor="gray80"\n')
+			self.dump_main_output(f)
+			self.dump_out_amps(f)
+			f.write('}\n')
+		else: 
+			f.write('subgraph "%s" {\n' % (name))
+			f.write('  pencolor="gray80"\n')
+			self.dump_main(f)
+			self.dump_amps(f)
+			f.write('}\n')
 
 		for origin in self.input_nodes():
 			if self.is_conn_active(origin.nid):
