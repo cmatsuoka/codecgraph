@@ -334,7 +334,7 @@ class CodecInfo:
 	def dump_graph(self, f):
 		f.write('digraph {\n')
 		f.write("""rankdir=LR
-		ranksep=1.0
+		ranksep=3.0
 		""")
 		for n in self.nodes.values():
 			n.dump_graph(f)
