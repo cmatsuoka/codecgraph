@@ -47,6 +47,45 @@ def parse_items(level, lines):
 			break
 		yield parse_item(linelvl, lines)
 
+def coloravg(a, b, v):
+	r = tuple([int(a[i]*(1-v) + b[i]*v) for i in 0,1,2])
+	return r
+
+def formatcolor(c):
+	return '#%02x%02x%02x' % c
+
+class Amplifier:
+	def __init__(self, ofs, nsteps, stepsize, mute):
+		self.ofs = ofs
+		self.nsteps = int(nsteps, 16)
+		self.stepsize = stepsize
+		self.mute = mute
+
+	def set_values(self, values):
+		self.values = values
+		self.gainvalues = [v & 0x7f for v in values]
+		self.mutevalues = [(v & 0x80) <> 0 for v in values]
+
+	def color(self):
+		if True in self.mutevalues:
+			level = 0
+		else:
+			average = sum(self.gainvalues)/len(self.gainvalues)
+
+			if self.nsteps == 0:
+				level = 1
+			else:
+				#XXX: confirm if this formula is correct
+				level = float(average)/(self.nsteps)
+		if level > 1: level = 1
+
+
+		zerocolor = (200, 200, 200)
+		fullcolor = (0, 0, 255)
+		color = coloravg(zerocolor, fullcolor, level)
+
+		return formatcolor(color)
+
 class Node:
 	node_info_re = re.compile('^Node (0x[0-9a-f]*) \[(.*?)\] wcaps 0x[0-9a-f]*?: (.*)$')
 	final_hex_re = re.compile(' *(0x[0-9a-f]*)$')
@@ -67,6 +106,7 @@ class Node:
 
 		self.wcaps = wcapstr.split()
 
+		# parse all items on the node information
 		for item,subitems in self.subitems:
 			# Parse node fields
 			if ': ' in item:
@@ -90,6 +130,7 @@ class Node:
 
 		self.fields = fields
 
+		# parse connection info
 		conn = fields.get('Connection', ('0', []))
 
 		number,items = conn
@@ -109,6 +150,39 @@ class Node:
 
 		if not self.active_conn and self.num_inputs == 1:
 			self.active_conn = self.inputs[0]
+
+		# parse amplifier info
+		def parse_amps(name, count):
+			capstr = fields['%s caps' % (name)][0]
+
+			if capstr == 'N/A':
+				caps = {'ofs':0, 'nsteps':'0x00',
+				        'stepsize':0, 'mute':0}
+			else:
+				capl = capstr.split(', ')
+
+				caps = {}
+				for cap in capl:
+					cname,cval = cap.split('=', 1)
+					caps[cname] = cval
+
+			valstr = fields['%s vals' % (name)][0]
+			vals = re.findall(r'\[([^]]*)\]', valstr)
+
+			amps = []
+			for i in range(count):
+				amp = Amplifier(caps['ofs'], caps['nsteps'],
+			                        caps['stepsize'], caps['mute'])
+				intvals = [int(v, 16) for v in vals[i].split(' ')]
+				amp.set_values(intvals)
+				amps.append(amp)
+
+			return amps
+
+		if self.has_inamp():
+			self.inamps = parse_amps('Amp-In', self.num_inputs)
+		if self.has_outamp():
+			self.outamp, = parse_amps('Amp-Out', 1)
 
 		self.outputs = []
 
@@ -263,13 +337,16 @@ class Node:
 			self.dump_main_input()
 			self.dump_main_output()
 
-	def show_amp(self, f, id, type, frm, to, label=''):
-		f.write('  %s [label = "%s", shape=triangle orientation=-90];\n' % (id, label))
-		f.write('  %s -> %s [arrowsize=0.5, arrowtail=dot, weight=2.0];\n' % (frm, to))
+	def show_amp(self, f, id, type, frm, to, label='', color=None):
+		if color is None: fill = ''
+		else: fill=' color="%s"' % (color)
+
+		f.write('  %s [label = "%s", shape=triangle orientation=-90%s];\n' % (id, label, fill))
+		f.write('  %s -> %s [arrowsize=0.5, arrowtail=dot, weight=2.0%s];\n' % (frm, to, fill))
 
 	def dump_out_amps(self, f):
 		if self.show_output() and self.has_outamp():
-			self.show_amp(f, self.outamp_id(), "Out", self.outamp_next_id(), self.outamp_id())
+			self.show_amp(f, self.outamp_id(), "Out", self.outamp_next_id(), self.outamp_id(), '', self.outamp.color())
 
 	def dump_in_amps(self, f):
 		if self.show_input() and self.has_inamp():
@@ -279,9 +356,10 @@ class Node:
 			else:
 				amporigins = [ ('', None) ]
 
-			for label,origin in amporigins:
+			for i in range(len(amporigins)):
+				label,origin = amporigins[i]
 				ampid = self.inamp_id(origin)
-				self.show_amp(f, ampid, "In", ampid, self.inamp_next_id(), label)
+				self.show_amp(f, ampid, "In", ampid, self.inamp_next_id(), label, self.inamps[i].color())
 
 	def dump_amps(self, f):
 		self.dump_out_amps(f)
