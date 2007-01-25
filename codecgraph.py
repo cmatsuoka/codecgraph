@@ -146,16 +146,21 @@ class Node:
 	def has_inamp(self):
 		return 'Amp-In' in self.wcaps
 
-	def inamp_id(self):
+	def many_ampins(self):
+		return self.type == 'Audio Mixer'
+
+	def inamp_id(self, orignid):
+		if self.many_ampins():
+			return '"%s-ampin-%s"' % (self.idstring(), orignid)
 		return '"%s-ampin"' % (self.idstring())
 
-	def in_id(self):
+	def in_id(self, orignid):
 
 		if self.is_divided():
 			return self.main_input_id()
 
 		if self.has_inamp():
-			return self.inamp_id()
+			return self.inamp_id(orignid)
 
 		return self.inamp_next_id()
 
@@ -257,8 +262,15 @@ class Node:
 		if self.show_output() and self.has_outamp():
 			show_amp(self.outamp_id(), "Out", self.outamp_next_id(), self.outamp_id())
 		if self.show_input() and self.has_inamp():
-			show_amp(self.inamp_id(), "In", self.inamp_id(), self.inamp_next_id())
 
+			if self.many_ampins():
+				amporigins = self.inputs
+			else:
+				amporigins = [None]
+
+			for origin in amporigins:
+				ampid = self.inamp_id(origin)
+				show_amp(ampid, "In", ampid, self.inamp_next_id())
 
 	def is_conn_active(self, c):
 		if self.type == 'Audio Mixer':
@@ -282,7 +294,7 @@ class Node:
 				attrs="[color=gray20]"
 			else:
 				attrs="[color=gray style=dashed]"
-			f.write('%s -> %s %s;\n' % (origin.out_id(), self.in_id(), attrs))
+			f.write('%s -> %s %s;\n' % (origin.out_id(), self.in_id(origin.nid), attrs))
 		
 
 re_indent = re.compile("^ *")
