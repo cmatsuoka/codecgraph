@@ -275,7 +275,7 @@ class Node:
 		if self.show_input() and self.has_inamp():
 
 			if self.many_ampins():
-				amporigins = [(str(n), self.inputs[n]) for n in range(len(self.inputs))]
+				amporigins = [("%d (0x%02x)" % (n, self.inputs[n]), self.inputs[n]) for n in range(len(self.inputs))]
 			else:
 				amporigins = [ ('', None) ]
 
