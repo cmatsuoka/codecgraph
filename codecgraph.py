@@ -135,11 +135,11 @@ class Node:
 		return '"%s-ampout"' % (self.idstring())
 
 	def out_id(self):
-		if self.is_divided():
-			return self.main_output_id()
-
 		if self.has_outamp():
 			return self.outamp_id()
+
+		if self.is_divided():
+			return self.main_output_id()
 
 		return self.outamp_next_id()
 
@@ -156,11 +156,11 @@ class Node:
 
 	def in_id(self, orignid):
 
-		if self.is_divided():
-			return self.main_input_id()
-
 		if self.has_inamp():
 			return self.inamp_id(orignid)
+
+		if self.is_divided():
+			return self.main_input_id()
 
 		return self.inamp_next_id()
 
@@ -179,14 +179,14 @@ class Node:
 	def inamp_next_id(self):
 		"""ID of the node where the In-Amp would be connected"""
 		if self.is_divided():
-			return self.main_output_id()
+			return self.main_input_id()
 
 		return self.main_id()
 
 	def outamp_next_id(self):
 		"""ID of the node where the Out-Amp would be connected"""
 		if self.is_divided():
-			return self.main_input_id()
+			return self.main_output_id()
 
 		return self.main_id()
 
