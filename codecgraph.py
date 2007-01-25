@@ -209,11 +209,11 @@ class Node:
 		return '"%s-ampout"' % (self.idstring())
 
 	def out_id(self):
-		if self.has_outamp():
-			return self.outamp_id()
-
 		if self.is_divided():
 			return self.main_output_id()
+
+		if self.has_outamp():
+			return self.outamp_id()
 
 		return self.outamp_next_id()
 
@@ -221,7 +221,7 @@ class Node:
 		return 'Amp-In' in self.wcaps
 
 	def many_ampins(self):
-		types = ['Audio Mixer', 'Pin Complex']
+		types = ['Audio Mixer']
 		return self.type in types
 
 	def inamp_id(self, orignid):
@@ -230,12 +230,11 @@ class Node:
 		return '"%s-ampin"' % (self.idstring())
 
 	def in_id(self, orignid):
+		if self.is_divided():
+			return self.main_input_id()
 
 		if self.has_inamp():
 			return self.inamp_id(orignid)
-
-		if self.is_divided():
-			return self.main_input_id()
 
 		return self.inamp_next_id()
 
@@ -254,14 +253,14 @@ class Node:
 	def inamp_next_id(self):
 		"""ID of the node where the In-Amp would be connected"""
 		if self.is_divided():
-			return self.main_input_id()
+			return self.main_output_id()
 
 		return self.main_id()
 
 	def outamp_next_id(self):
 		"""ID of the node where the Out-Amp would be connected"""
 		if self.is_divided():
-			return self.main_output_id()
+			return self.main_input_id()
 
 		return self.main_id()
 
@@ -379,13 +378,13 @@ class Node:
 			f.write('subgraph "%s-in" {\n' % (name))
 			f.write('  pencolor="gray80"\n')
 			self.dump_main_input(f)
-			self.dump_in_amps(f)
+			self.dump_out_amps(f)
 			f.write('}\n')
 
 			f.write('subgraph "%s-out" {\n' % (name))
 			f.write('  pencolor="gray80"\n')
 			self.dump_main_output(f)
-			self.dump_out_amps(f)
+			self.dump_in_amps(f)
 			f.write('}\n')
 		else: 
 			f.write('subgraph "%s" {\n' % (name))
