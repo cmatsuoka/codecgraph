@@ -147,7 +147,8 @@ class Node:
 		return 'Amp-In' in self.wcaps
 
 	def many_ampins(self):
-		return self.type == 'Audio Mixer'
+		types = ['Audio Mixer', 'Pin Complex']
+		return self.type in types
 
 	def inamp_id(self, orignid):
 		if self.many_ampins():
