@@ -56,7 +56,7 @@ def formatcolor(c):
 
 class Amplifier:
 	def __init__(self, ofs, nsteps, stepsize, mute):
-		self.ofs = ofs
+		self.ofs = int(ofs, 16)
 		self.nsteps = int(nsteps, 16)
 		self.stepsize = stepsize
 		self.mute = mute
@@ -76,9 +76,10 @@ class Amplifier:
 				level = 1
 			else:
 				#XXX: confirm if this formula is correct
-				level = float(average)/(self.nsteps)
-		if level > 1: level = 1
+				level = 1-float(average-self.ofs)/(self.nsteps)
 
+		if level < 0: level = 0
+		if level > 1: level = 1
 
 		zerocolor = (200, 200, 200)
 		fullcolor = (0, 0, 255)
@@ -156,15 +157,14 @@ class Node:
 			capstr = fields['%s caps' % (name)][0]
 
 			if capstr == 'N/A':
-				caps = {'ofs':0, 'nsteps':'0x00',
-				        'stepsize':0, 'mute':0}
-			else:
-				capl = capstr.split(', ')
+				capstr = 'ofs=0x00, nsteps=0x00, stepsize=0x00, mute=0'
 
-				caps = {}
-				for cap in capl:
-					cname,cval = cap.split('=', 1)
-					caps[cname] = cval
+			capl = capstr.split(', ')
+
+			caps = {}
+			for cap in capl:
+				cname,cval = cap.split('=', 1)
+				caps[cname] = cval
 
 			valstr = fields['%s vals' % (name)][0]
 			vals = re.findall(r'\[([^]]*)\]', valstr)
