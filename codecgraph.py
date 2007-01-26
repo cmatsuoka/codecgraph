@@ -127,7 +127,7 @@ class Node:
 				else:
 					fields[f] = v,subitems
 			else:
-				sys.stderr("Unknown node item: %s" % (item))
+				sys.stderr.write("Unknown node item: %s\n" % (item))
 
 		self.fields = fields
 
