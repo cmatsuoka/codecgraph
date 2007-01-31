@@ -10,11 +10,13 @@ DOTTY = dot
 # alc861 - alc861 found on the web
 # hp-samba-6stack-dig - HP Samba with model=6stack-dig
 # hp-samba-6stack-dig-fullvol # HP Samba w/ model=6stack-dig, full volume
+# hp-educ.ar # HP educ.ar machine
 # alc883 - ALC883 found on the web
 # alc882 - ALC882 found on the web
 
 codecs = claudio boiko boto-120l fbl \
 	 hp hp-samba hp-samba-6stack-dig hp-samba-6stack-dig-fullvol \
+	 hp-educ.ar \
 	 alc861 alc882 alc883
 
 allnames = $(addprefix codecs/, $(codecs))
