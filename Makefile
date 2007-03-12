@@ -9,10 +9,12 @@ DOTTY = dot
 # fbl - notebook Flavio Bruno Leitner
 # hp-dx2200 - HP Thomas (DX2200)
 # hp-samba - HP Samba with autoconfig
+# hp-atlantis - HP Atlantis notebook
 # alc861 - alc861 found on the web
 # hp-educ.ar - HP educ.ar machine
 # alc883 - ALC883 found on the web
 # alc882 - ALC882 found on the web
+# clevo-m540se - Clevo m540se notebook
 
 samples = claudio boiko dell-latitude-120l fbl \
 	 hp-dx2200 hp-samba \
