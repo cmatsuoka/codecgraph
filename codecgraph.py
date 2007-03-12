@@ -2,8 +2,8 @@
 #
 # by Eduardo Habkost <ehabkost@mandriva.com>
 #
-# Copyright (c) 2006 Eduardo Habkost <ehabkost@mandriva.com>
-# Copyright (c) 2006 Mandriva Conectiva
+# Copyright (c) 2006,2007 Eduardo Habkost <ehabkost@mandriva.com>
+# Copyright (c) 2006,2007 Mandriva Conectiva
 #
 #
 # This program is free software; you can redistribute it and/or modify
