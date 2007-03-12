@@ -1,6 +1,8 @@
 
 DOTTY = dot
 
+# Sample codec file collection:
+#
 # claudio - notebook Claudio Matsuoka
 # boiko - notebook Gustavo Boiko
 # boto-120l - Dell Latitude 120L
