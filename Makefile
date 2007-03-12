@@ -5,7 +5,7 @@ DOTTY = dot
 # boiko - notebook Gustavo Boiko
 # boto-120l - Dell Latitude 120L Eduardo Habkost
 # fbl - notebook Flavio Bruno Leitner
-# hp - HP Thomas (DX2200
+# hp-dx2200 - HP Thomas (DX2200)
 # hp-samba - HP Samba with autoconfig
 # alc861 - alc861 found on the web
 # hp-samba-6stack-dig - HP Samba with model=6stack-dig
@@ -15,7 +15,7 @@ DOTTY = dot
 # alc882 - ALC882 found on the web
 
 samples = claudio boiko dell-latitude-120l fbl \
-	 hp hp-samba hp-samba-6stack-dig hp-samba-6stack-dig-fullvol \
+	 hp-dx2200 hp-samba hp-samba-6stack-dig hp-samba-6stack-dig-fullvol \
 	 hp-educ.ar hp-atlantis \
 	 alc861 alc882 alc883 \
 	 clevo-m540se
