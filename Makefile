@@ -54,4 +54,4 @@ clean:
 	rm -f $(psfiles)
 	rm -f $(dotfiles)
 	rm -f $(pngfiles)
-	rmdir out
+	if [ -d out ];then rmdir out;fi
