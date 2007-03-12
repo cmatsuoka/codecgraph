@@ -10,7 +10,7 @@ DOTTY = dot
 # hp-dx2200 - HP Thomas (DX2200)
 # hp-samba - HP Samba with autoconfig
 # alc861 - alc861 found on the web
-# hp-educ.ar # HP educ.ar machine
+# hp-educ.ar - HP educ.ar machine
 # alc883 - ALC883 found on the web
 # alc882 - ALC882 found on the web
 
