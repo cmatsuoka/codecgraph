@@ -3,7 +3,7 @@ DOTTY = dot
 
 # claudio - notebook Claudio Matsuoka
 # boiko - notebook Gustavo Boiko
-# boto-120l - Dell Latitude 120L Eduardo Habkost
+# boto-120l - Dell Latitude 120L
 # fbl - notebook Flavio Bruno Leitner
 # hp-dx2200 - HP Thomas (DX2200)
 # hp-samba - HP Samba with autoconfig
