@@ -14,17 +14,15 @@ DOTTY = dot
 # alc883 - ALC883 found on the web
 # alc882 - ALC882 found on the web
 
-codecs = claudio boiko boto-120l fbl \
+samples = claudio boiko boto-120l fbl \
 	 hp hp-samba hp-samba-6stack-dig hp-samba-6stack-dig-fullvol \
 	 hp-educ.ar hp-atlantis \
 	 alc861 alc882 alc883 \
 	 clevo-m540se
 
-allnames = $(addprefix codecs/, $(codecs))
-
-psfiles = $(addsuffix .ps, $(allnames))
-dotfiles = $(addsuffix .dot, $(allnames))
-pngfiles = $(addsuffix .png, $(allnames))
+psfiles = $(addprefix out/, $(addsuffix .ps, $(samples)))
+dotfiles = $(addprefix out/, $(addsuffix .dot, $(samples)))
+pngfiles = $(addprefix out/, $(addsuffix .png, $(samples)))
 
 
 all:
@@ -39,7 +37,7 @@ thumbs: pngs
 		convert -resize 25%x25% $$p codecs/thumb-`basename $$p`; \
 	done
 
-%.dot: %.txt codecgraph.py
+out/%.dot: samples/%.txt codecgraph.py
 	python codecgraph.py $< > $@
 
 %.ps: %.dot
