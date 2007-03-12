@@ -16,7 +16,7 @@ DOTTY = dot
 
 codecs = claudio boiko boto-120l fbl \
 	 hp hp-samba hp-samba-6stack-dig hp-samba-6stack-dig-fullvol \
-	 hp-educ.ar \
+	 hp-educ.ar hp-atlantis \
 	 alc861 alc882 alc883 \
 	 clevo-m540se
 
