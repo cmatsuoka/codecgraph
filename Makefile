@@ -32,12 +32,15 @@ dot: $(dotfiles)
 ps: $(psfiles)
 png: $(pngfiles)
 
+out:
+	mkdir out
+
 thumbs: pngs
 	for p in $(pngfiles);do \
 		convert -resize 25%x25% $$p codecs/thumb-`basename $$p`; \
 	done
 
-out/%.dot: samples/%.txt codecgraph.py
+out/%.dot: samples/%.txt codecgraph.py out
 	python codecgraph.py $< > $@
 
 %.ps: %.dot
@@ -51,3 +54,4 @@ clean:
 	rm -f $(psfiles)
 	rm -f $(dotfiles)
 	rm -f $(pngfiles)
+	rmdir out
