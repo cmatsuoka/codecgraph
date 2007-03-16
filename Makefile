@@ -14,12 +14,13 @@ DOTTY = dot
 # hp-educ.ar - HP educ.ar machine
 # alc883 - ALC883 found on the web
 # alc882 - ALC882 found on the web
+# alc888 - ALC888 on a SiS development board
 # clevo-m540se - Clevo m540se notebook
 
 samples = claudio boiko dell-latitude-120l fbl \
 	 hp-dx2200 hp-samba \
 	 hp-educ.ar hp-atlantis \
-	 alc861 alc882 alc883 \
+	 alc861 alc882 alc883 alc888 \
 	 clevo-m540se
 
 psfiles = $(addprefix out/, $(addsuffix .ps, $(samples)))
