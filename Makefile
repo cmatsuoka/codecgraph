@@ -8,7 +8,7 @@ samples = \
 	hp-dx2200 hp-dx2250 \
 	hp-atlantis hp-spartan hp-samba hp-nettle hp-lucknow \
 	alc861 alc882 alc883 alc888 \
-	clevo-m540se andreas thinkpad-t60
+	clevo-m540se thinkpad-t60
 
 psfiles = $(addprefix out/, $(addsuffix .ps, $(samples)))
 dotfiles = $(addprefix out/, $(addsuffix .dot, $(samples)))
