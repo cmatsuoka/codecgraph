@@ -21,7 +21,7 @@ DOTTY = dot
 # clevo-m540se - Clevo m540se notebook
 
 samples = claudio boiko dell-latitude-120l fbl \
-	 asus-m2nbp-vm \
+	 asus-m2nbp-vm asus-m2npv-vm \
 	 hp-dx2200 hp-samba \
 	 hp-educ.ar hp-atlantis hp-spartan hp-nettle hp-lucknow \
 	 alc861 alc882 alc883 alc888 \
