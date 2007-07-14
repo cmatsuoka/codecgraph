@@ -3,11 +3,12 @@ DOTTY = dot
 
 # Sample codec file collection:
 #
-# claudio - notebook Claudio Matsuoka - LG LW20
-# boiko - notebook Gustavo Boiko
-# boto-120l - Dell Latitude 120L
-# fbl - notebook Flavio Bruno Leitner - Dell D520
-# hp-dx2200 - HP Thomas (DX2200)
+# lg-lw20 - notebook Claudio Matsuoka
+# asus-w5f - notebook Gustavo Boiko
+# dell-latitude-120l - notebook boto
+# dell-latitude-d520 - notebook Flavio Bruno Leitner
+# hp-dx2200 - HP Thomas
+# hp-dx2250 - HP educ.ar
 # hp-samba - HP Samba with autoconfig
 # hp-atlantis - HP Atlantis notebook
 # hp-spartan - HP Spartan notebook
@@ -20,12 +21,14 @@ DOTTY = dot
 # alc888 - ALC888 on a SiS development board
 # clevo-m540se - Clevo m540se notebook
 
-samples = claudio boiko dell-latitude-120l fbl \
-	 asus-m2nbp-vm asus-m2npv-vm \
-	 hp-dx2200 hp-samba \
-	 hp-educ.ar hp-atlantis hp-spartan hp-nettle hp-lucknow \
-	 alc861 alc882 alc883 alc888 \
-	 clevo-m540se
+samples = \
+	asus-w5f asus-m2nbp-vm asus-m2npv-vm \
+	dell-latitude-120l dell-latitude-520 \
+	lg-lw20 \
+	hp-dx2200 hp-dx2250 \
+	hp-atlantis hp-spartan hp-samba hp-nettle hp-lucknow \
+	alc861 alc882 alc883 alc888 \
+	clevo-m540se
 
 psfiles = $(addprefix out/, $(addsuffix .ps, $(samples)))
 dotfiles = $(addprefix out/, $(addsuffix .dot, $(samples)))
