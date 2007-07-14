@@ -191,7 +191,7 @@ class Node:
 
 	def input_nodes(self):
 		for c in self.inputs:
-			yield self.codec.nodes[c]
+			yield self.codec.get_node(c)
 
 	def is_divided(self):
 		if self.type == 'Pin Complex':
@@ -305,6 +305,8 @@ class Node:
 			'Audio Selector':[ ('shape', 'parallelogram'),
 			                   ('orientation', '0')  ],
 			'Audio Mixer':[ ('shape', 'hexagon') ],
+			'Unknown Node':[ ('color', 'red'),
+			                 ('shape', 'Mdiamond') ],
 		}
 		return shape_dict.get(self.type, default_attrs)
 
@@ -422,6 +424,15 @@ class CodecInfo:
 				sys.stderr.write("%d: Unknown item: %s\n" % (line, item))
 
 		self.create_out_lists()
+
+	def get_node(self, nid):
+		n = self.nodes.get(nid)
+		if not n:
+			# create a fake node
+			n = Node(self, 'Node 0x%02x [Unknown Node] wcaps 0x0000: ' % (nid), [])
+			self.nodes[nid] = n
+			n.label = lambda: ('"Unknown Node 0x%02x"' % (nid))
+		return n
 
 	def create_out_lists(self):
 		for n in self.nodes.values():
