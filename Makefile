@@ -23,7 +23,7 @@ DOTTY = dot
 
 samples = \
 	asus-w5f asus-m2nbp-vm asus-m2npv-vm \
-	dell-latitude-120l dell-latitude-520 \
+	dell-latitude-120l dell-latitude-d520 \
 	lg-lw20 \
 	hp-dx2200 hp-dx2250 \
 	hp-atlantis hp-spartan hp-samba hp-nettle hp-lucknow \
