@@ -13,14 +13,14 @@ samples = \
 psfiles = $(addprefix out/, $(addsuffix .ps, $(samples)))
 dotfiles = $(addprefix out/, $(addsuffix .dot, $(samples)))
 pngfiles = $(addprefix out/, $(addsuffix .png, $(samples)))
-
+svgfiles = $(addprefix out/, $(addsuffix .svg, $(samples)))
 
 all:
-
 
 dot: $(dotfiles)
 ps: $(psfiles)
 png: $(pngfiles)
+svg: $(svgfiles)
 
 out:
 	mkdir out
@@ -39,6 +39,8 @@ out/%.dot: samples/%.txt codecgraph.py out
 %.png: %.dot
 	$(DOTTY) -Tpng -o $@ $<
 
+%.svg: %.dot
+	$(DOTTY) -Tsvg -o $@ $<
 
 clean:
 	rm -f $(psfiles)
