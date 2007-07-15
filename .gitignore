@@ -1,4 +1,5 @@
 *.dot
 *.ps
 *.png
+*.svg
 out
