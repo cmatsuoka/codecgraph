@@ -9,6 +9,7 @@ alc888			Realtek ALC888
 asus-m2nbp-vm		Analog Devices AD1986A
 asus-m2npv-vm		Analog Devices AD1986A
 asus-p5b-deluxe-wifi	Analog Devices AD1988B
+asus-p5ld2-vm		Realtek ALC882
 asus-w5f		Realtek ALC660
 clevo-m540se		Generic 1106 ID 1708
 dell-latitude-120l	SigmaTel STAC9200
