@@ -2,27 +2,28 @@
 
 Sample files and codecs:
 
-alc861			Realtek ALC861
-alc882			Realtek ALC882
-alc883			Realtek ALC883
-alc888			Realtek ALC888
-asus-m2nbp-vm		Analog Devices AD1986A
-asus-m2npv-vm		Analog Devices AD1986A
-asus-p5b-deluxe-wifi	Analog Devices AD1988B
-asus-p5ld2-vm		Realtek ALC882
-asus-w5f		Realtek ALC660
-clevo-m540se		Generic 1106 ID 1708
-dell-latitude-120l	SigmaTel STAC9200
-dell-latitude-d520	SigmaTel STAC9200
-hp-atlantis		Conexant CXT5045
-hp-dx2200		Realtek ID 862
-hp-dx2250		Realtek ID 862
-hp-lucknow		Realtek ALC888
-hp-nettle		Realtek ALC888
-hp-samba		Realtek ALC888
-hp-spartan		Conexant CX20549 (Venice)
-lenovo-thinkpad-t60	Analog Devices AD1981
-lg-lw20			Realtek ALC880
+alc861					Realtek ALC861
+alc882					Realtek ALC882
+alc883					Realtek ALC883
+alc888					Realtek ALC888
+asus-m2nbp-vm				Analog Devices AD1986A
+asus-m2npv-vm				Analog Devices AD1986A
+asus-p5b-deluxe-wifi			Analog Devices AD1988B
+asus-p5ld2-vm				Realtek ALC882
+asus-w5f				Realtek ALC660
+clevo-m540se				Generic 1106 ID 1708
+dell-latitude-120l			SigmaTel STAC9200
+dell-latitude-d520			SigmaTel STAC9200
+hp-atlantis				Conexant CXT5045
+hp-dc5750		103c:280a	Realtek ALC260
+hp-dx2200		1462:7254	Realtek ID 862
+hp-dx2250		1462:7297	Realtek ID 862
+hp-lucknow		103c:2a60	Realtek ALC888
+hp-nettle		103c:2a61	Realtek ALC888
+hp-samba		103c:2a4f	Realtek ALC888
+hp-spartan		103c:30d9	Conexant CX20549 (Venice)
+lenovo-thinkpad-t60			Analog Devices AD1981
+lg-lw20			1854:0018	Realtek ALC880
 
 
 Node shape and colors:
