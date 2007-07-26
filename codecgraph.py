@@ -110,8 +110,9 @@ class Node:
 		# parse all items on the node information
 		for item,subitems in self.subitems:
 			# Parse node fields
-			if ': ' in item:
-				f,v = item.split(': ', 1)
+			if ':' in item:
+				f,v = item.split(':', 1)
+				v = v.lstrip()
 
 				# strip hex number at the end.
 				# some fields, such as Pincap & Pin Default,
@@ -404,7 +405,7 @@ class Node:
 		
 
 re_indent = re.compile("^ *")
-
+ 
 class CodecInfo:
 	def __init__(self, f):
 		self.fields = {}
@@ -419,6 +420,8 @@ class CodecInfo:
 			elif ': ' in item:
 				f,v = item.split(': ', 1)
 				self.fields[f] = v
+			elif item.strip() == '':
+				continue
 			else:
 				line = total_lines-len(lines)
 				sys.stderr.write("%d: Unknown item: %s\n" % (line, item))
