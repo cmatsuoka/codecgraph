@@ -1,5 +1,4 @@
 
-
 Sample files and codecs:
 
 alc861					Realtek ALC861
@@ -12,12 +11,13 @@ asus-p5b-deluxe-wifi			Analog Devices AD1988B
 asus-p5ld2-vm				Realtek ALC882
 asus-w5f				Realtek ALC660
 clevo-m540se				Generic 1106 ID 1708
+corrino-691sr		14c0:0026	Realtek ALC268
 dell-latitude-120l			SigmaTel STAC9200
 dell-latitude-d520			SigmaTel STAC9200
 hp-atlantis				Conexant CXT5045
 hp-dc5750		103c:280a	Realtek ALC260
-hp-dx2200		1462:7254	Realtek ID 862
-hp-dx2250		1462:7297	Realtek ID 862
+hp-dx2200		1462:7254	Realtek ALC862
+hp-dx2250		1462:7297	Realtek ALC862
 hp-lucknow		103c:2a60	Realtek ALC888
 hp-nettle		103c:2a61	Realtek ALC888
 hp-samba		103c:2a4f	Realtek ALC888
@@ -34,4 +34,5 @@ Audio output:	blue ellipse
 Audio selector:	parallelogram
 Audio mixer:	hexagon
 Pin complex:	rectangle
+
 
