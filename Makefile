@@ -8,7 +8,8 @@ samples = \
 	dell-latitude-120l dell-latitude-d520 \
 	lg-lw20 \
 	hp-dc5750 hp-dx2200 hp-dx2250 \
-	hp-atlantis hp-spartan hp-samba hp-nettle hp-lucknow \
+	hp-atlantis hp-spartan hp-victoria \
+	hp-samba hp-nettle hp-lucknow \
 	alc861 alc882 alc883 alc888 \
 	clevo-m540se thinkpad-t60
 
