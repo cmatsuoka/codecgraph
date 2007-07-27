@@ -27,7 +27,7 @@ hp-nettle		103c:2a61	Realtek ALC888
 hp-samba		103c:2a4f	Realtek ALC888
 hp-spartan		103c:30d9	Conexant CX20549 (Venice)
 hp-victoria		103c:30d5	Conexant CX20549 (Venice)
-lenovo-thinkpad-t60			Analog Devices AD1981
+lenovo-thinkpad-t60	17aa:2010	Analog Devices AD1981
 lg-lw20			1854:0018	Realtek ALC880
 
 
