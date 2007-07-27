@@ -14,6 +14,7 @@ clevo-m540se				Generic 1106 ID 1708
 corrino-691sr		14c0:0026	Realtek ALC268
 dell-latitude-120l			SigmaTel STAC9200
 dell-latitude-d520			SigmaTel STAC9200
+gateway-mt3707		107b:0318	SigmaTel STAC9200
 hp-atlantis				Conexant CXT5045
 hp-dc5750		103c:280a	Realtek ALC260
 hp-dx2200		1462:7254	Realtek ALC862
