@@ -6,7 +6,7 @@ samples = \
 	asus-p5ld2-vm \
 	corrino-691sr \
 	dell-latitude-120l dell-latitude-d520 \
-	gateway-mt3707 \
+	gateway-mt3707 gateway-mp6954 \
 	hp-dc5750 hp-dx2200 hp-dx2250 \
 	hp-atlantis hp-spartan hp-victoria \
 	hp-samba hp-nettle hp-lucknow \
