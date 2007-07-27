@@ -11,11 +11,11 @@ asus-m2nbp-vm				Analog Devices AD1986A
 asus-m2npv-vm				Analog Devices AD1986A
 asus-p5b-deluxe-wifi			Analog Devices AD1988B
 asus-p5ld2-vm				Realtek ALC882
-asus-w5f				Realtek ALC660
-clevo-m540se				Generic 1106 ID 1708
+asus-w5f		1043:1263	Realtek ALC660
+clevo-m540se		1106:3288	VIA VT1708
 corrino-691sr		14c0:0026	Realtek ALC268
 dell-latitude-120l			SigmaTel STAC9200
-dell-latitude-d520			SigmaTel STAC9200
+dell-latitude-d520	1028:01d4	SigmaTel STAC9200
 gateway-mp6954		107b:0366	SigmaTel STAC9250
 gateway-mt3707		107b:0318	SigmaTel STAC9200
 hp-atlantis				Conexant CXT5045
