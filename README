@@ -18,7 +18,7 @@ dell-latitude-120l			SigmaTel STAC9200
 dell-latitude-d520	1028:01d4	SigmaTel STAC9200
 gateway-mp6954		107b:0366	SigmaTel STAC9250
 gateway-mt3707		107b:0318	SigmaTel STAC9200
-hp-atlantis				Conexant CXT5045
+hp-atlantis		103c:30b7	Conexant CXT5045
 hp-dc5750		103c:280a	Realtek ALC260
 hp-dx2200		1462:7254	Realtek ALC862
 hp-dx2250		1462:7297	Realtek ALC862
