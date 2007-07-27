@@ -4,7 +4,7 @@ DOTTY = dot
 samples = \
 	asus-w5f asus-m2nbp-vm asus-m2npv-vm asus-p5b-deluxe-wifi \
 	asus-p5ld2-vm \
-	apple-macbook \
+	apple-imac24 apple-macbook \
 	corrino-691sr \
 	dell-latitude-120l dell-latitude-d520 \
 	gateway-mt3707 gateway-mp6954 \

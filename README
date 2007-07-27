@@ -5,7 +5,8 @@ alc861					Realtek ALC861
 alc882					Realtek ALC882
 alc883					Realtek ALC883
 alc888					Realtek ALC888
-apple-macbook				SigmaTel STAC9221 A1
+apple-imac24				Realtek ALC885
+apple-macbook		8384:7680	SigmaTel STAC9221 A1
 asus-m2nbp-vm				Analog Devices AD1986A
 asus-m2npv-vm				Analog Devices AD1986A
 asus-p5b-deluxe-wifi			Analog Devices AD1988B
