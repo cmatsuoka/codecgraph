@@ -15,7 +15,7 @@ samples = \
 	hp-samba hp-nettle hp-lucknow \
 	lg-lw20 \
 	sony-vaio-sz110 \
-	toshiba-satellite-p105 \
+	toshiba-satellite-p105 toshiba-qosmio-f30-111 \
 	thinkpad-t60
 
 psfiles = $(addprefix out/, $(addsuffix .ps, $(samples)))

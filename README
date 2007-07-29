@@ -30,6 +30,7 @@ hp-victoria		103c:30d5	Conexant CX20549 (Venice)
 lenovo-thinkpad-t60	17aa:2010	Analog Devices AD1981
 lg-lw20			1854:0018	Realtek ALC880
 sony-vaio-sz110				SigmaTel ID 7661
+toshiba-qosmio-f30-111			SigmaTel ID 7691
 toshiba-satellite-p105	1179:ff31	Conexant CX20551 (Waikiki)
 
 
