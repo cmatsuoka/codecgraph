@@ -14,7 +14,7 @@ samples = \
 	hp-atlantis hp-spartan hp-victoria \
 	hp-samba hp-nettle hp-lucknow \
 	lenovo-thinkpad-t60 \
-	lg-lw20 \
+	lg-lw20 lg-lw60 \
 	sony-vaio-sz110 \
 	toshiba-satellite-p105 toshiba-qosmio-f30-111
 
