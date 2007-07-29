@@ -13,10 +13,10 @@ samples = \
 	hp-dc5750 hp-dx2200 hp-dx2250 \
 	hp-atlantis hp-spartan hp-victoria \
 	hp-samba hp-nettle hp-lucknow \
+	lenovo-thinkpad-t60 \
 	lg-lw20 \
 	sony-vaio-sz110 \
-	toshiba-satellite-p105 toshiba-qosmio-f30-111 \
-	thinkpad-t60
+	toshiba-satellite-p105 toshiba-qosmio-f30-111
 
 psfiles = $(addprefix out/, $(addsuffix .ps, $(samples)))
 dotfiles = $(addprefix out/, $(addsuffix .dot, $(samples)))
