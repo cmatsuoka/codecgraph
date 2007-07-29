@@ -2,9 +2,11 @@
 DOTTY = dot
 
 samples = \
+	alc861 alc882 alc883 alc888 \
 	asus-w5f asus-m2nbp-vm asus-m2npv-vm asus-p5b-deluxe-wifi \
 	asus-p5ld2-vm \
 	apple-imac24 apple-macbook \
+	clevo-m540se \
 	corrino-691sr \
 	dell-latitude-120l dell-latitude-d520 \
 	gateway-mt3707 gateway-mp6954 \
@@ -12,8 +14,8 @@ samples = \
 	hp-atlantis hp-spartan hp-victoria \
 	hp-samba hp-nettle hp-lucknow \
 	lg-lw20 \
-	alc861 alc882 alc883 alc888 \
-	clevo-m540se thinkpad-t60
+	toshiba-satellite-p105 \
+	thinkpad-t60
 
 psfiles = $(addprefix out/, $(addsuffix .ps, $(samples)))
 dotfiles = $(addprefix out/, $(addsuffix .dot, $(samples)))
