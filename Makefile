@@ -16,7 +16,8 @@ samples = \
 	lenovo-thinkpad-t60 \
 	lg-lw20 lg-lw60 \
 	sony-vaio-sz110 sony-vaio-vgn-s5vpb \
-	toshiba-satellite-p105 toshiba-qosmio-f30-111
+	toshiba-satellite-p105 toshiba-qosmio-f30-111 \
+	uniwill-m30
 
 psfiles = $(addprefix out/, $(addsuffix .ps, $(samples)))
 dotfiles = $(addprefix out/, $(addsuffix .dot, $(samples)))

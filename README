@@ -34,6 +34,7 @@ sony-vaio-sz110				SigmaTel ID 7661
 sony-vaio-vgn-s5vpb			Realtek ALC260
 toshiba-qosmio-f30-111			SigmaTel ID 7691
 toshiba-satellite-p105	1179:ff31	Conexant CX20551 (Waikiki)
+uniwill-m30		1584:9072	Realtek ALC861
 
 
 Node shape and colors:
