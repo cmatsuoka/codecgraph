@@ -31,6 +31,7 @@ lenovo-thinkpad-t60	17aa:2010	Analog Devices AD1981
 lg-lw20			1854:0018	Realtek ALC880
 lg-lw60			1854:000e	C-Media CMI9880
 sony-vaio-sz110				SigmaTel ID 7661
+sony-vaio-vgn-s5vpb			Realtek ALC260
 toshiba-qosmio-f30-111			SigmaTel ID 7691
 toshiba-satellite-p105	1179:ff31	Conexant CX20551 (Waikiki)
 
