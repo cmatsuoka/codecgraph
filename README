@@ -16,6 +16,7 @@ clevo-m540se		1106:3288	VIA VT1708
 corrino-691sr		14c0:0026	Realtek ALC268
 dell-latitude-120l	1028:01cb	SigmaTel STAC9200
 dell-latitude-d520	1028:01d4	SigmaTel STAC9200
+dell-latitude-d820	1028:01cc	SigmaTel STAC9200
 gateway-mp6954		107b:0366	SigmaTel STAC9250
 gateway-mt3707		107b:0318	SigmaTel STAC9200
 hp-atlantis		103c:30b7	Conexant CXT5045
