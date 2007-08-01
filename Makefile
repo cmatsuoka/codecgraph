@@ -15,7 +15,7 @@ samples = \
 	hp-samba hp-nettle hp-lucknow \
 	lenovo-thinkpad-t60 \
 	lg-lw20 lg-lw60 \
-	sony-vaio-sz110 sony-vaio-vgn-s5vpb sony-vaio-unknown \
+	sony-vaio-sz110 sony-vaio-vgn-s5vpb sony-vaio-vgc-rc102 \
 	toshiba-satellite-p105 toshiba-qosmio-f30-111 \
 	uniwill-m30
 
