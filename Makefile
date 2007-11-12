@@ -2,11 +2,10 @@
 DOTTY = dot
 
 samples = \
-	alc662-novo alc662-velho \
 	alc861 alc882 alc883 alc888 \
 	asus-w2p asus-w5f \
 	asus-m2nbp-vm asus-m2npv-vm asus-p5b-deluxe-wifi \
-	asus-p5ld2-vm \
+	asus-p5ld2-vm asus-p5gc-mx \
 	apple-imac24 apple-macbook \
 	clevo-m540se \
 	corrino-691sr \
