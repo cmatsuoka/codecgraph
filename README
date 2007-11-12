@@ -11,6 +11,7 @@ asus-m2nbp-vm				Analog Devices AD1986A
 asus-m2npv-vm				Analog Devices AD1986A
 asus-p5b-deluxe-wifi			Analog Devices AD1988B
 asus-p5ld2-vm				Realtek ALC882
+asus-w2p		1043:1974	Realtec ALC882
 asus-w5f		1043:1263	Realtek ALC660
 clevo-m540se		1106:3288	VIA VT1708
 corrino-691sr		14c0:0026	Realtek ALC268
