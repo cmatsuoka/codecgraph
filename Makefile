@@ -9,6 +9,7 @@ samples = \
 	apple-imac24 apple-macbook \
 	clevo-m540se \
 	corrino-691sr \
+	dell-inspiron-530 \
 	dell-latitude-120l dell-latitude-d520 dell-latitude-d620 \
 	dell-latitude-d820 \
 	gateway-mt3707 gateway-mp6954 \

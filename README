@@ -15,6 +15,7 @@ asus-w2p		1043:1974	Realtec ALC882
 asus-w5f		1043:1263	Realtek ALC660
 clevo-m540se		1106:3288	VIA VT1708
 corrino-691sr		14c0:0026	Realtek ALC268
+dell-inspiron-530	1028:020d	Realtek ALC888
 dell-latitude-120l	1028:01cb	SigmaTel STAC9200
 dell-latitude-d520	1028:01d4	SigmaTel STAC9200
 dell-latitude-d620	1028:01c2	SigmaTel STAC9200
