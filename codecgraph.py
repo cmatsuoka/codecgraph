@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#
 # Script to generate graphviz graphs from HDA-Intel codec information
 #
 # by Eduardo Habkost <ehabkost@mandriva.com>

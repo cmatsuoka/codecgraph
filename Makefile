@@ -39,13 +39,14 @@ svg: $(svgfiles)
 out:
 	mkdir out
 
-thumbs: pngs
+thumbs: png
 	for p in $(pngfiles);do \
-		convert -resize 25%x25% $$p codecs/thumb-`basename $$p`; \
+		convert -resize 10%x10% $$p out/thumb-`basename $$p`; \
+		echo "converting $$p"; \
 	done
 
-out/%.dot: samples/%.txt codecgraph.py out
-	python codecgraph.py $< > $@
+out/%.dot: samples/%.txt codecgraph.py
+	./codecgraph.py $< > $@
 
 %.ps: %.dot
 	$(DOTTY) -Tps -o $@ $<

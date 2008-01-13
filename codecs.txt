@@ -1,0 +1,41 @@
+ALC861				?		Realtek ALC861
+ALC882				?		Realtek ALC882
+ALC883				?		Realtek ALC883
+ALC888				?		Realtek ALC888
+Apple iMac24			?		Realtek ALC885
+Apple MacBook			8384:7680	SigmaTel STAC9221 A1
+Asus M2NBP-VM			?		Analog Devices AD1986A
+Asus M2NPV-VM			?		Analog Devices AD1986A
+Asus P5B Deluxe-Wifi		?		Analog Devices AD1988B
+Asus P5LD2-VM			?		Realtek ALC882
+Asus W2P			1043:1974	Realtec ALC882
+Asus W5F			1043:1263	Realtek ALC660
+Clevo M540SE			1106:3288	VIA VT1708
+Corrino 691SR			14c0:0026	Realtek ALC268
+Dell Inspiron 530		1028:020d	Realtek ALC888
+Dell Latitude 120L		1028:01cb	SigmaTel STAC9200
+Dell Latitude D520		1028:01d4	SigmaTel STAC9200
+Dell Latitude D620		1028:01c2	SigmaTel STAC9200
+Dell Latitude D820		1028:01cc	SigmaTel STAC9200
+Gateway MP6954			107b:0366	SigmaTel STAC9250
+Gateway MT3707			107b:0318	SigmaTel STAC9200
+HP Atlantis			103c:30b7	Conexant CXT5045
+HP DC5750			103c:280a	Realtek ALC260
+HP DX2200			1462:7254	Realtek ALC862
+HP DX2250			1462:7297	Realtek ALC862
+HP Lucknow			103c:2a60	Realtek ALC888
+HP Nettle			103c:2a61	Realtek ALC888
+HP Samba			103c:2a4f	Realtek ALC888
+HP Spartan			103c:30d9	Conexant CX20549 (Venice)
+HP Spartan-ng			14f1:5051	Conexant CX20561 (Hermosa)
+HP Victoria			103c:30d5	Conexant CX20549 (Venice)
+Lenovo Thinkpad T60		17aa:2010	Analog Devices AD1981
+LG LW20				1854:0018	Realtek ALC880
+LG LW60				1854:000e	C-Media CMI9880
+Shuttle XPC SG33G5M		?		Realtek ALC888
+Sony VAIO SZ110			?		SigmaTel ID 7661
+Sony VAIO VGC-RC102		104d:81e7	SigmaTel CXD9872RD/K
+Sony VAIO VGN S5VPB		?		Realtek ALC260
+Toshiba Qosmio F30-111		?		SigmaTel ID 7691
+Toshiba Satellite P105		1179:ff31	Conexant CX20551 (Waikiki)
+Uniwill M30			1584:9072	Realtek ALC861
