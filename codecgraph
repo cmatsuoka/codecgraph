@@ -41,10 +41,8 @@ shift `expr $OPTIND - 1`
 codecfile=$1
 
 if [ -z "$codecfile" ]; then
-    codecfile=`echo /proc/asound/card*/codec*|head -1`
-    if [ "$codecfile" = "/proc/asound/card*/codec*" ]; then
-       codecfile=""
-    else
+    codecfile=`ls /proc/asound/card*/codec*|head -1 2>/dev/null`
+    if [ -n "$codecfile" ]; then
        echo "Reading codec data from $codecfile"
     fi
 fi
@@ -54,14 +52,12 @@ if [ -z "$codecfile" ]; then
     exit 1
 fi
 
-echo|codecgraph.py >/dev/null 2>&1
-if [ $? -eq 127 ]; then
+if [ -z "`which codecgraph.py`" ]; then
     echo "error: can't find codecgraph.py in PATH (package corrupt?)" >&2
     exit 1
 fi
 
-echo|dot >/dev/null 2>&1
-if [ $? -eq 127 ]; then
+if [ -z "`which dot`" ]; then
     echo "error: dot executable not found (did you install graphviz?)" >&2
     exit 1
 fi
