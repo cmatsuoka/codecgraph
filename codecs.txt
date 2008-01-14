@@ -32,6 +32,7 @@ HP Victoria			103c:30d5	Conexant CX20549 (Venice)
 Lenovo Thinkpad T60		17aa:2010	Analog Devices AD1981
 LG LW20				1854:0018	Realtek ALC880
 LG LW60				1854:000e	C-Media CMI9880
+MSI MS-7267			1462:7267	Realtek ALC883
 Shuttle XPC SG33G5M		1297:3106	Realtek ALC888
 Sony VAIO SZ110			?		SigmaTel ID 7661
 Sony VAIO VGC-RC102		104d:81e7	SigmaTel CXD9872RD/K
