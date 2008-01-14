@@ -1,39 +1,46 @@
 #!/bin/sh
 
 name=`basename $0`
-usage="Usage: $name [--version] [--format=png|svg|ps] codecfile"
+usage="Usage: $name [-f png|svg|ps] [-o name] [-h] [-v] [codecfile]"
 fmt="svg"
 version="1.0"
 
-while test $# -gt 0 ; do
-    optarg=`echo $1|cut -f2 -d=`
-    case "${1}" in
-    --format=*)			# specify output file format
-	fmt=$optarg
-        ;;
-    --output=*)
-	outfile=$optarg
-	;;
-    --version)			# display version information
+while getopts hvf:o: opt
+do
+    case "$opt" in
+    f)				# specify output file format
+         fmt="$OPTARG"
+         ;;
+    o)				# specify output file name
+         outfile="$OPTARG"
+         ;;
+    v)				# display version information
 	echo "$name $version"
 	exit 0
         ;;
-    -*)
+    h|\?)	
         echo "${usage}" 1>&2
         exit 1
         ;;
-    *)
-        break
-        ;;
     esac
-    shift
 done
+shift `expr $OPTIND - 1`
+
 
 codecfile=$1
 
 if [ -z "$codecfile" ]; then
-    echo "${usage}" 1>&2
-    exit 0
+    codecfile=`echo /proc/asound/card*/codec*|head -1`
+    if [ "$codecfile" = "/proc/asound/card*/codec*" ]; then
+       codecfile=""
+    else
+       echo "Reading codec data from $codecfile"
+    fi
+fi
+
+if [ -z "$codecfile" ]; then
+    echo "error: codec file not specified" >&2
+    exit 1
 fi
 
 echo|codecgraph.py >/dev/null 2>&1
