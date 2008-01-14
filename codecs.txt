@@ -1,6 +1,6 @@
 ALC882				?		Realtek ALC882
-ALC883				?		Realtek ALC883
 ALC888				?		Realtek ALC888
+Acer TM4070			1025:009e	Realtek ALC883
 Apple iMac24			?		Realtek ALC885
 Apple MacBook			8384:7680	SigmaTel STAC9221 A1
 Asus M2NBP-VM			?		Analog Devices AD1986A

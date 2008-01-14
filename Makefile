@@ -3,7 +3,8 @@ PREFIX = /usr/local
 DOTTY = dot
 
 samples = \
-	alc861 alc882 alc883 alc888 \
+	alc861 alc882 alc888 \
+	acer-tm4070 \
 	asus-w2p asus-w5f \
 	asus-m2nbp-vm asus-m2npv-vm asus-p5b-deluxe-wifi \
 	asus-p5ld2-vm asus-p5gc-mx \
@@ -13,6 +14,7 @@ samples = \
 	dell-inspiron-530 \
 	dell-latitude-120l dell-latitude-d520 dell-latitude-d620 \
 	dell-latitude-d820 \
+	fujitsu-siemens-amilo-pi-1505 \
 	gateway-mt3707 gateway-mp6954 \
 	hp-dc5750 hp-dx2200 hp-dx2250 \
 	hp-atlantis hp-spartan hp-victoria \
