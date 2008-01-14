@@ -1,4 +1,5 @@
 
+PREFIX = /usr/local
 DOTTY = dot
 
 samples = \
@@ -36,8 +37,10 @@ ps: $(psfiles)
 png: $(pngfiles)
 svg: $(svgfiles)
 
-out:
-	mkdir out
+install:
+	install -m755 -D codecgraph $(DESTDIR)$(PREFIX)/bin/codecgraph
+	install -m755 -D codecgraph.py $(DESTDIR)$(PREFIX)/bin/codecgraph.py
+	install -m644 -D codecgraph.1 $(DESTDIR)$(PREFIX)/man/man1/codecgraph.1
 
 thumbs: png
 	for p in $(pngfiles);do \
