@@ -2,7 +2,7 @@
 
 $\ = "\n";
 
-open FILE, "codecs.txt";
+open FILE, "../codecs.txt";
 while (<FILE>) {
 	chomp();
 	my ($system, $id, $codec) = split /\t+/;
