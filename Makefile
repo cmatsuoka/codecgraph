@@ -1,9 +1,7 @@
-
 PREFIX = /usr/local
 DOTTY = dot
 
 samples = \
-	alc861 alc882 alc888 \
 	acer-tm4070 \
 	asus-eeepc-701 \
 	asus-m2nbp-vm asus-m2npv-vm asus-p5b-deluxe-wifi \
@@ -29,6 +27,7 @@ samples = \
 	toshiba-satellite-p105 toshiba-qosmio-f30-111 \
 	uniwill-m30
 
+txtfiles = $(addprefix samples/, $(addsuffix .txt, $(samples)))
 psfiles = $(addprefix out/, $(addsuffix .ps, $(samples)))
 dotfiles = $(addprefix out/, $(addsuffix .dot, $(samples)))
 pngfiles = $(addprefix out/, $(addsuffix .png, $(samples)))
@@ -68,4 +67,4 @@ clean:
 	rm -f $(psfiles)
 	rm -f $(dotfiles)
 	rm -f $(pngfiles)
-	if [ -d out ];then rmdir out;fi
+
