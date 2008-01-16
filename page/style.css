@@ -1,0 +1,24 @@
+
+
+table {
+  border-width: 0px 0px 0px 0px;
+  border-spacing: 0px;
+  border-style: none none none none;
+  border-color: gray gray gray gray;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+table th,td {
+  border-width: 1px 1px 1px 1px;
+  padding: 2px 2px 2px 2px;
+  border-style: solid solid solid solid;
+  border-color: gray gray gray gray;
+  background-color: rgb(255, 255, 240);
+}
+
+img.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
