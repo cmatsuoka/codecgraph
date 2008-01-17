@@ -48,7 +48,7 @@ Codecgraph's parser reads the codec description from
 <ul>
 <li>http://git.raisama.net/hda-tools.git (Eduardo's tree)
 <li>http://helllabs.org/git/codecgraph.git (Claudio's tree)
-<li>git://git.distro.conectiva/git/herton-hda-tools (Herton's tree)
+<!-- <li>git://git.distro.conectiva/git/herton-hda-tools (Herton's tree) -->
 </ul>
 
 
