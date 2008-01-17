@@ -33,7 +33,7 @@ foreach $codec (sort keys %_system) {
 	print "<h3><a name=\"$codec\">$codec</a></h3>";
 
 	print "<table>";
-	print " <tr><th>System</th><th>ID</th><th>Vendor</th></tr>";
+	print " <tr><th width=\"200\">System</th><th width=\"80\">ID</th><th width=\"300\">Vendor</th></tr>";
 	foreach $system (@{$_system{$codec}}) {
 		(my $file = lc $system) =~ s/ /-/g;
 
