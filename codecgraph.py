@@ -416,6 +416,14 @@ class CodecInfo:
 		total_lines = len(lines)
 
 		for item,subitems in parse_items(-1, lines):
+
+			if not ': ' in item and item.endswith(':'):
+				# special case where there is no ": "
+				# but we want to treat it like a "key: value"
+				# line
+				# (e.g. "Default PCM:" line)
+				item += ' '
+
 			if item.startswith('Node '):
 				n = Node(self, item, subitems)
 				self.nodes[n.nid] = n
