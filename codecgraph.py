@@ -427,6 +427,9 @@ class CodecInfo:
 			if item.startswith('Node '):
 				n = Node(self, item, subitems)
 				self.nodes[n.nid] = n
+			if item.startswith('No Modem Function Group found'):
+				# ignore those lines
+				pass
 			elif ': ' in item:
 				f,v = item.split(': ', 1)
 				self.fields[f] = v
