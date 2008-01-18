@@ -434,7 +434,7 @@ class CodecInfo:
 				continue
 			else:
 				line = total_lines-len(lines)
-				sys.stderr.write("%d: Unknown item: %s\n" % (line, item))
+				sys.stderr.write("Warning: line %d ignored: %s\n" % (line, item))
 
 		self.create_out_lists()
 
