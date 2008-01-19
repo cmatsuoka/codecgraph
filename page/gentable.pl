@@ -17,17 +17,32 @@ open FILE, "../codecs.txt";
 while (<FILE>) {
 	chomp();
 	my ($system, $id, $codec) = split /\t+/;
+	if ($codec =~ m!^Analog Devices!) {
+		($codec_vendor, $codec_model) = $codec =~ m!(\S*\s\S*)\s(.*)!;
+	} else {
+		($codec_vendor, $codec_model) = $codec =~ m!(\S*)\s(.*)!;
+	}
+
+	unless ($mark{$codec}) {
+		push @{$_codec_model{$codec_vendor}}, $codec_model;
+		$mark{$codec} = 1;
+	}
 	$_id{$system} = $id;
 	push @{$_system{$codec}}, $system;
 }
 close FILE;
 
 print "Known codecs: ";
-$sep = "";
-foreach $codec (sort keys %_system) {
-	printf "$sep<a href=\"\#$codec\">$codec</a>";
-	$sep = ", ";
+print "<ul>";
+foreach $vendor (sort keys %_codec_model) {
+	print "<li>$vendor: ";
+	$sep = "";
+	foreach $model (sort @{$_codec_model{$vendor}}) {
+		printf "$sep<a href=\"\#$vendor $model\">$model</a>";
+		$sep = ", ";
+	}
 }
+print "\n</ul>\n";
 
 foreach $codec (sort keys %_system) {
 	print "<h3><a name=\"$codec\">$codec</a></h3>";
