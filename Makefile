@@ -19,6 +19,7 @@ samples = \
 	hp-atlantis hp-spartan hp-victoria \
 	hp-samba hp-nettle hp-lucknow \
 	hp-spartan-ng \
+	intel-dg965ss.txt  intel-dp965lt.txt \
 	lenovo-thinkpad-t60 \
 	lg-lw20 lg-lw60 \
 	msi-ms-7267 \
