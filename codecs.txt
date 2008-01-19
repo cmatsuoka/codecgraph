@@ -29,6 +29,7 @@ HP Samba			103c:2a4f	Realtek ALC888
 HP Spartan			103c:30d9	Conexant CX20549 (Venice)
 HP Spartan-ng			14f1:5051	Conexant CX20561 (Hermosa)
 HP Victoria			103c:30d5	Conexant CX20549 (Venice)
+Intel DP965LT			8086:2111	SigmaTel STAC9227
 Lenovo Thinkpad T60		17aa:2010	Analog Devices AD1981
 LG LW20				1854:0018	Realtek ALC880
 LG LW60				1854:000e	C-Media CMI9880
