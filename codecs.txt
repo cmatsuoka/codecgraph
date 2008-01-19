@@ -6,7 +6,7 @@ Asus M2NBP-VM			?		Analog Devices AD1986A
 Asus M2NPV-VM			?		Analog Devices AD1986A
 Asus P5B Deluxe-Wifi		?		Analog Devices AD1988B
 Asus P5LD2-VM			?		Realtek ALC882
-Asus W2P			1043:1974	Realtec ALC882
+Asus W2P			1043:1974	Realtek ALC882
 Asus W5F			1043:1263	Realtek ALC660
 Clevo M540SE			1106:3288	VIA VT1708
 Clevo M720SR			1558:0722	Realtek ALC883
