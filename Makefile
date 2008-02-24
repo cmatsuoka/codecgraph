@@ -13,6 +13,7 @@ samples = \
 	dell-inspiron-530 \
 	dell-latitude-120l dell-latitude-d520 dell-latitude-d620 \
 	dell-latitude-d820 \
+	everex-cloudbook \
 	fujitsu-siemens-amilo-pi-1505 \
 	gateway-mt3707 gateway-mp6954 \
 	hp-dc5750 hp-dx2200 hp-dx2250 \

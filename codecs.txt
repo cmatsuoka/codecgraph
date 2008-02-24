@@ -16,6 +16,7 @@ Dell Latitude 120L		1028:01cb	SigmaTel STAC9200
 Dell Latitude D520		1028:01d4	SigmaTel STAC9200
 Dell Latitude D620		1028:01c2	SigmaTel STAC9200
 Dell Latitude D820		1028:01cc	SigmaTel STAC9200
+Everex Cloudbook		1509:2f07	VIA VT1708
 Fujitsu Siemens Amilo Pi 1505	1734:10c7	Realtek ALC861
 Gateway MP6954			107b:0366	SigmaTel STAC9250
 Gateway MT3707			107b:0318	SigmaTel STAC9200
