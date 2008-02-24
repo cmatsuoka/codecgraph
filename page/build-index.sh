@@ -40,9 +40,10 @@ Codecgraph's parser reads the codec description from
 <h2>Contributing</h2>
 
 If you have an unlisted system, send your ALSA codec description file
-(<tt>/proc/asound/card0/codec#X</tt>) to claudio&#40;gmail.com or
-ehabkost&#40;raisama.net along with the PCI subdevice ID obtained with
-<tt>lspci -vvnn</tt> and the name/model of your computer.
+(<tt>/proc/asound/card0/codec#X</tt>) to claudio&#64;gmail.com or
+ehabkost&#64;raisama.net along with the PCI subdevice ID obtained with
+<tt>lspci -vvnn</tt> and the manufacturer/model of your computer or
+motherboard.
 
 <h2>Download</h2>
 
