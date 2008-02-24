@@ -37,6 +37,13 @@ Codecgraph's parser reads the codec description from
 <tt>/proc/asound/card*/codec#0</tt> and parsed data is sent to
 <a href="http://graphviz.org">Graphviz</a> for actual graph generation.
 
+<h2>Contributing</h2>
+
+If you have an unlisted system, send your ALSA codec description file
+(<tt>/proc/asound/card0/codec#X</tt>) to claudio&#40;gmail.com or
+ehabkost&#40;raisama.net along with the PCI subdevice ID obtained with
+<tt>lspci -vvnn</tt> and the name/model of your computer.
+
 <h2>Download</h2>
 
 <h3>Tarball</h3>
