@@ -24,6 +24,7 @@ samples = \
 	lenovo-thinkpad-t60 \
 	lg-lw20 lg-lw60 \
 	msi-ms-7267 \
+	quanta-il1 \
 	shuttle-xpc-sg33g5m \
 	sony-vaio-sz110 sony-vaio-vgn-s5vpb sony-vaio-vgc-rc102 \
 	toshiba-satellite-p105 toshiba-qosmio-f30-111 \
