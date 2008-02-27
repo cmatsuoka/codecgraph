@@ -21,7 +21,7 @@ samples = \
 	hp-samba hp-nettle hp-lucknow \
 	hp-spartan-ng \
 	intel-dg965ss  intel-dp965lt \
-	lenovo-thinkpad-t60 \
+	lenovo-3000-n100 lenovo-thinkpad-t60 \
 	lg-lw20 lg-lw60 \
 	msi-ms-7267 \
 	quanta-il1 \
