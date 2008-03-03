@@ -8,7 +8,7 @@ samples = \
 	asus-p5ld2-vm asus-p5gc-mx \
 	asus-w2p asus-w5f \
 	apple-imac24 apple-macbook \
-	clevo-m540se clevo-m720sr \
+	clevo-m540se clevo-m720r clevo-m720sr \
 	corrino-691sr \
 	dell-inspiron-530 \
 	dell-latitude-120l dell-latitude-d520 dell-latitude-d620 \
