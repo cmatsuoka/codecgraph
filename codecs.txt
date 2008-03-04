@@ -42,7 +42,7 @@ Quanta IL1			152d:0771	Realtek ALC267
 Shuttle XPC SG33G5M		1297:3106	Realtek ALC888
 Sony VAIO SZ110			?		SigmaTel ID 7661
 Sony VAIO VGC-RC102		104d:81e7	SigmaTel CXD9872RD/K
-Sony Vaio VGN-G21XP		104d:9026	Realtek ALC262
+Sony VAIO VGN-G21XP		104d:9026	Realtek ALC262
 Sony VAIO VGN S5VPB		?		Realtek ALC260
 Toshiba Qosmio F30-111		1179:0001	SigmaTel ID 7691
 Toshiba Satellite P105		1179:ff31	Conexant CX20551 (Waikiki)
