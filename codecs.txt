@@ -49,4 +49,4 @@ Toshiba Qosmio F30-111		1179:0001	SigmaTel ID 7691
 Toshiba Satellite P105		1179:ff31	Conexant CX20551 (Waikiki)
 Uniwill M30			1584:9072	Realtek ALC861
 Dell Precision 490		1028:01c1	SigmaTel STAC9200
-Toshiba Equium L30-149		1002:437b	Realtek ALC861-VD
+Toshiba Equium L30-149		1179:ff31	Realtek ALC861-VD
