@@ -18,6 +18,7 @@ Dell Latitude 120L		1028:01cb	SigmaTel STAC9200
 Dell Latitude D520		1028:01d4	SigmaTel STAC9200
 Dell Latitude D620		1028:01c2	SigmaTel STAC9200
 Dell Latitude D820		1028:01cc	SigmaTel STAC9200
+Dell Precision 490		1028:01c1	SigmaTel STAC9200
 Everex Cloudbook		1509:2f07	VIA VT1708
 Fujitsu Siemens Amilo Pi 1505	1734:10c7	Realtek ALC861
 Gateway MP6954			107b:0366	SigmaTel STAC9250
@@ -46,8 +47,7 @@ Sony VAIO SZ110			?		SigmaTel ID 7661
 Sony VAIO VGC-RC102		104d:81e7	SigmaTel CXD9872RD/K
 Sony VAIO VGN-G21XP		104d:9026	Realtek ALC262
 Sony VAIO VGN S5VPB		?		Realtek ALC260
+Toshiba Equium L30-149		1179:ff31	Realtek ALC861-VD
 Toshiba Qosmio F30-111		1179:0001	SigmaTel ID 7691
 Toshiba Satellite P105		1179:ff31	Conexant CX20551 (Waikiki)
 Uniwill M30			1584:9072	Realtek ALC861
-Dell Precision 490		1028:01c1	SigmaTel STAC9200
-Toshiba Equium L30-149		1179:ff31	Realtek ALC861-VD
