@@ -33,6 +33,7 @@ HP DX2200			1462:7254	Realtek ALC862
 HP DX2250			1462:7297	Realtek ALC862
 HP Lucknow			103c:2a60	Realtek ALC888
 HP Nettle			103c:2a61	Realtek ALC888
+HP Pavillion dv9782eg		103c:30cf	Conexant ID 5051
 HP Samba			103c:2a4f	Realtek ALC888
 HP Spartan			103c:30d9	Conexant CX20549 (Venice)
 HP Spartan-ng			14f1:5051	Conexant CX20561 (Hermosa)

@@ -19,10 +19,10 @@ samples = \
 	fujitsu-siemens-amilo-pi-1505 \
 	gateway-mt3707 gateway-mp6954 \
 	hp-dc5750 hp-dx2200 hp-dx2250 \
-	hp-atlantis hp-spartan hp-victoria \
+	hp-atlantis hp-spartan hp-victoria hp-spartan-ng \
 	hp-samba hp-nettle hp-lucknow \
-	hp-spartan-ng \
-	intel-dg965ss  intel-dp965lt \
+	hp-pavillion-dv9782eg \
+	intel-dg965ss intel-dp965lt \
 	lenovo-3000-n100 lenovo-thinkpad-t60 lenovo-f41a \
 	lg-lw20 lg-lw60 lg-le50 \
 	msi-ms-7267 \
