@@ -15,6 +15,7 @@ samples = \
 	dell-inspiron-530 \
 	dell-latitude-120l dell-latitude-d520 dell-latitude-d620 \
 	dell-latitude-d820 \
+	dell-precision-490 \
 	everex-cloudbook \
 	fujitsu-siemens-amilo-pi-1505 \
 	gateway-mt3707 gateway-mp6954 \
@@ -32,7 +33,7 @@ samples = \
 	sony-vaio-vgn-g21xp \
 	toshiba-satellite-p105 toshiba-qosmio-f30-111 \
 	toshiba-equium-l30149 toshiba-tecra-m9 \
-	uniwill-m30 dell-precision-490
+	uniwill-m30
 
 txtfiles = $(addprefix samples/, $(addsuffix .txt, $(samples)))
 psfiles = $(addprefix out/, $(addsuffix .ps, $(samples)))
