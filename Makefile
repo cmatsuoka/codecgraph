@@ -6,7 +6,7 @@ samples = \
 	asus-eeepc-701 \
 	asus-m2nbp-vm asus-m2npv-vm asus-p5b-deluxe-wifi \
 	asus-p5ld2-vm asus-p5gc-mx \
-	asus-w2p asus-w5f \
+	asus-w2p asus-w5f asus-x55sv \
 	asus-m2a-vm-hdmi \
 	apple-imac24 apple-macbook \
 	clevo-m540se clevo-m720r clevo-m720sr \
