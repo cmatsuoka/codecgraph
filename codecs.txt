@@ -53,4 +53,5 @@ Sony VAIO VGN S5VPB		?		Realtek ALC260
 Toshiba Equium L30-149		1179:ff31	Realtek ALC861-VD
 Toshiba Qosmio F30-111		1179:0001	SigmaTel ID 7691
 Toshiba Satellite P105		1179:ff31	Conexant CX20551 (Waikiki)
+Toshiba Tecra M9		1179:0001	Realtek ALC262
 Uniwill M30			1584:9072	Realtek ALC861
