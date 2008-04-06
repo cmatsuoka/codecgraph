@@ -13,6 +13,7 @@ Asus W5F			1043:1263	Realtek ALC660
 Clevo M540SE			1106:3288	VIA VT1708
 Clevo M720R			1558:0721	Realtek ALC883
 Clevo M720SR			1558:0722	Realtek ALC883
+Compal JFT02			14c0:0023	Realtek ALC268
 Corrino 691SR			14c0:0026	Realtek ALC268
 Dell Inspiron 530		1028:020d	Realtek ALC888
 Dell Latitude 120L		1028:01cb	SigmaTel STAC9200

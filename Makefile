@@ -10,6 +10,7 @@ samples = \
 	asus-m2a-vm-hdmi \
 	apple-imac24 apple-macbook \
 	clevo-m540se clevo-m720r clevo-m720sr \
+	compal-jft02 \
 	corrino-691sr \
 	dell-inspiron-530 \
 	dell-latitude-120l dell-latitude-d520 dell-latitude-d620 \
