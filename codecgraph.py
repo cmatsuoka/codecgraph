@@ -189,8 +189,9 @@ class Node:
 
 			return amps
 
-		if self.has_inamp():
-			self.inamps = parse_amps('Amp-In', self.num_inputs)
+		inamps = self.num_inamps()
+		if inamps > 0:
+			self.inamps = parse_amps('Amp-In', inamps)
 		if self.has_outamp():
 			self.outamp, = parse_amps('Amp-Out', 1)
 
@@ -233,6 +234,11 @@ class Node:
 	def many_ampins(self):
 		types = ['Audio Mixer']
 		return self.type in types
+
+	def num_inamps(self):
+		if not self.has_inamp(): return 0
+		elif self.many_ampins(): return self.num_inputs
+		else: return 1
 
 	def inamp_id(self, orignid):
 		if self.many_ampins():
