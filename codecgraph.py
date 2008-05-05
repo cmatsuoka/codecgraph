@@ -172,11 +172,18 @@ class Node:
 			valstr = fields['%s vals' % (name)][0]
 			vals = re.findall(r'\[([^]]*)\]', valstr)
 
+			# warn if Amp-In vals field is broken
+			if count != len(vals):
+				sys.stderr.write("Node 0x%02x: Amp-In vals count is wrong: values found: %d. expected: %d\n" % (self.nid, len(vals), count))
+
 			amps = []
 			for i in range(count):
 				amp = Amplifier(caps['ofs'], caps['nsteps'],
 			                        caps['stepsize'], caps['mute'])
-				intvals = [int(v, 16) for v in vals[i].split(' ')]
+				if len(vals) > i: intvals = [int(v, 16) for v in vals[i].split(' ')]
+				# just in case the "vals" field is
+				# broken in our input file
+				else: intvals = [0, 0]
 				amp.set_values(intvals)
 				amps.append(amp)
 
