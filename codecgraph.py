@@ -429,28 +429,31 @@ class CodecInfo:
 		total_lines = len(lines)
 
 		for item,subitems in parse_items(-1, lines):
+			line = total_lines-len(lines)
+			try:
+				if not ': ' in item and item.endswith(':'):
+					# special case where there is no ": "
+					# but we want to treat it like a "key: value"
+					# line
+					# (e.g. "Default PCM:" line)
+					item += ' '
 
-			if not ': ' in item and item.endswith(':'):
-				# special case where there is no ": "
-				# but we want to treat it like a "key: value"
-				# line
-				# (e.g. "Default PCM:" line)
-				item += ' '
-
-			if item.startswith('Node '):
-				n = Node(self, item, subitems)
-				self.nodes[n.nid] = n
-			if item.startswith('No Modem Function Group found'):
-				# ignore those lines
-				pass
-			elif ': ' in item:
-				f,v = item.split(': ', 1)
-				self.fields[f] = v
-			elif item.strip() == '':
-				continue
-			else:
-				line = total_lines-len(lines)
-				sys.stderr.write("Warning: line %d ignored: %s\n" % (line, item))
+				if item.startswith('Node '):
+					n = Node(self, item, subitems)
+					self.nodes[n.nid] = n
+				if item.startswith('No Modem Function Group found'):
+					# ignore those lines
+					pass
+				elif ': ' in item:
+					f,v = item.split(': ', 1)
+					self.fields[f] = v
+				elif item.strip() == '':
+					continue
+				else:
+					sys.stderr.write("Warning: line %d ignored: %s\n" % (line, item))
+			except:
+				sys.stderr.write('Exception around line %d\n' % (line))
+				raise
 
 		self.create_out_lists()
 
