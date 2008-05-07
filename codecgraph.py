@@ -172,18 +172,26 @@ class Node:
 			valstr = fields['%s vals' % (name)][0]
 			vals = re.findall(r'\[([^]]*)\]', valstr)
 
+			# warn if Amp-In vals field is broken
+			if count != len(vals):
+				sys.stderr.write("Node 0x%02x: Amp-In vals count is wrong: values found: %d. expected: %d\n" % (self.nid, len(vals), count))
+
 			amps = []
 			for i in range(count):
 				amp = Amplifier(caps['ofs'], caps['nsteps'],
 			                        caps['stepsize'], caps['mute'])
-				intvals = [int(v, 16) for v in vals[i].split(' ')]
+				if len(vals) > i: intvals = [int(v, 16) for v in vals[i].split(' ')]
+				# just in case the "vals" field is
+				# broken in our input file
+				else: intvals = [0, 0]
 				amp.set_values(intvals)
 				amps.append(amp)
 
 			return amps
 
-		if self.has_inamp():
-			self.inamps = parse_amps('Amp-In', self.num_inputs)
+		inamps = self.num_inamps()
+		if inamps > 0:
+			self.inamps = parse_amps('Amp-In', inamps)
 		if self.has_outamp():
 			self.outamp, = parse_amps('Amp-Out', 1)
 
@@ -226,6 +234,11 @@ class Node:
 	def many_ampins(self):
 		types = ['Audio Mixer']
 		return self.type in types
+
+	def num_inamps(self):
+		if not self.has_inamp(): return 0
+		elif self.many_ampins(): return self.num_inputs
+		else: return 1
 
 	def inamp_id(self, orignid):
 		if self.many_ampins():
@@ -416,28 +429,31 @@ class CodecInfo:
 		total_lines = len(lines)
 
 		for item,subitems in parse_items(-1, lines):
+			line = total_lines-len(lines)
+			try:
+				if not ': ' in item and item.endswith(':'):
+					# special case where there is no ": "
+					# but we want to treat it like a "key: value"
+					# line
+					# (e.g. "Default PCM:" line)
+					item += ' '
 
-			if not ': ' in item and item.endswith(':'):
-				# special case where there is no ": "
-				# but we want to treat it like a "key: value"
-				# line
-				# (e.g. "Default PCM:" line)
-				item += ' '
-
-			if item.startswith('Node '):
-				n = Node(self, item, subitems)
-				self.nodes[n.nid] = n
-			if item.startswith('No Modem Function Group found'):
-				# ignore those lines
-				pass
-			elif ': ' in item:
-				f,v = item.split(': ', 1)
-				self.fields[f] = v
-			elif item.strip() == '':
-				continue
-			else:
-				line = total_lines-len(lines)
-				sys.stderr.write("Warning: line %d ignored: %s\n" % (line, item))
+				if item.startswith('Node '):
+					n = Node(self, item, subitems)
+					self.nodes[n.nid] = n
+				if item.startswith('No Modem Function Group found'):
+					# ignore those lines
+					pass
+				elif ': ' in item:
+					f,v = item.split(': ', 1)
+					self.fields[f] = v
+				elif item.strip() == '':
+					continue
+				else:
+					sys.stderr.write("Warning: line %d ignored: %s\n" % (line, item))
+			except:
+				sys.stderr.write('Exception around line %d\n' % (line))
+				raise
 
 		self.create_out_lists()
 
