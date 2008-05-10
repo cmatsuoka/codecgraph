@@ -1,4 +1,5 @@
 Acer TM4070			1025:009e	Realtek ALC883
+Alienware m15x			152d:0770	Realtek ALC885
 Apple iMac24			?		Realtek ALC885
 Apple MacBook			8384:7680	SigmaTel STAC9221 A1
 Apple MacBook3,1		106b:00a1	Realtek ALC885
