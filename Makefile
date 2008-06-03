@@ -28,7 +28,7 @@ samples = \
 	hp-pavillion-dv9782eg \
 	intel-dg965ss intel-dp965lt \
 	lenovo-3000-n100 lenovo-thinkpad-t60 lenovo-thinkpad-t61 lenovo-f41a \
-	lg-lw20 lg-lw60 lg-le50 \
+	lg-lw20 lg-lw60 lg-le50 lg-p300 \
 	msi-ms-7267 msi-p35-neo \
 	quanta-il1 \
 	samsung-q45 \
