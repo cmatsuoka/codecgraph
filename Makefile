@@ -2,6 +2,7 @@ PREFIX = /usr/local
 DOTTY = dot
 
 samples = \
+	abit-kn9-ultra \
 	acer-tm4070 \
 	alienware-m15x \
 	apple-imac24 apple-macbook apple-macbook3_1 \

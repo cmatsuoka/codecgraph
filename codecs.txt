@@ -1,3 +1,4 @@
+Abit KN9 Ultra			147b:1c20	Realtek ALC883
 Acer TM4070			1025:009e	Realtek ALC883
 Alienware m15x			152d:0770	Realtek ALC885
 Apple iMac24			?		Realtek ALC885
