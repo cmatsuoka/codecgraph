@@ -50,7 +50,7 @@ foreach $codec (sort keys %_system) {
 	print "<table>";
 	print " <tr><th width=\"200\">System</th><th width=\"80\">ID</th><th width=\"300\">Vendor</th></tr>";
 	foreach $system (@{$_system{$codec}}) {
-		(my $file = lc $system) =~ s/ /-/g;
+		(my $file = lc $system) =~ y/ \./-_/;
 
 		print "<tr>";
 		print " <td><a href=\"out/$file.svg\">$system</a></td>";
