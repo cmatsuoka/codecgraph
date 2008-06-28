@@ -24,6 +24,7 @@ samples = \
 	gigabyte-ma790fx-ds5 gigabyte-ga965p-ds4 \
 	hp-dc5750 hp-dx2200 hp-dx2250 \
 	hp-atlantis hp-spartan hp-victoria hp-spartan-ng \
+	hp-nx7400 \
 	hp-samba hp-nettle hp-lucknow \
 	hp-pavillion-dv9782eg \
 	intel-dg965ss intel-dp965lt \
