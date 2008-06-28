@@ -6,6 +6,7 @@ Apple MacBook			8384:7680	SigmaTel STAC9221 A1
 Apple MacBook3.1		106b:00a1	Realtek ALC885
 Arima 820DI1			161f:2054	Realtek ALC883
 Asus Eeepc 701			1043:82a1	Realtek ALC662 rev1
+Asus F6S0			1043:1765	Realtek ALC888
 Asus M2A-VM HDMI		1043:8249	Realtek ALC883
 Asus M2NBP-VM			1043:81b3	Analog Devices AD1986A
 Asus M2NPV-VM			?		Analog Devices AD1986A
