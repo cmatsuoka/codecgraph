@@ -48,6 +48,7 @@ HP Samba			103c:2a4f	Realtek ALC888
 HP Spartan			103c:30d9	Conexant CX20549 (Venice)
 HP Spartan-ng			14f1:5051	Conexant CX20561 (Hermosa)
 HP Victoria			103c:30d5	Conexant CX20549 (Venice)
+HP Pavilion tx1420us		103c:30bf	Realtek ALC861-VD
 Intel DG965SS			8086:2114	SigmaTel STAC9227
 Intel DP965LT			8086:2111	SigmaTel STAC9227
 Lenovo 3000 N100		17aa:2066	Analog Devices AD1986A
