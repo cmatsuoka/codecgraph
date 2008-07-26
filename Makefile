@@ -36,7 +36,7 @@ samples = \
 	samsung-q45 \
 	shuttle-xpc-sg33g5m \
 	sony-vaio-sz110 sony-vaio-vgn-s5vpb sony-vaio-vgc-rc102 \
-	sony-vaio-vgn-g21xp \
+	sony-vaio-vgn-g21xp sony-vaio-fe41e \
 	toshiba-satellite-p105 toshiba-qosmio-f30-111 \
 	toshiba-equium-l30149 toshiba-tecra-m9 \
 	uniwill-m30
