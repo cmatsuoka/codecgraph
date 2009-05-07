@@ -58,7 +58,7 @@ Lenovo 3000 N100		17aa:2066	Analog Devices AD1986A
 Lenovo F41A			17aa:384e	Realtek ALC262
 Lenovo Thinkpad T60		17aa:2010	Analog Devices AD1981
 Lenovo Thinkpad T61		17aa:20ac	Analog Devices AD1984
-Lenovo W500			17aa:20f2	Conexant CX20561 (Hermosa)
+Lenovo Thinkpad W500		17aa:20f2	Conexant CX20561 (Hermosa)
 LG P300				1854:0120	Realtek ALC262
 LG LE50				1854:0023	SigmaTel STAC9200
 LG LW20				1854:0018	Realtek ALC880
