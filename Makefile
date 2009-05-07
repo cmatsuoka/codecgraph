@@ -3,7 +3,7 @@ DOTTY = dot
 
 samples = \
 	abit-kn9-ultra \
-	acer-tm4070 \
+	acer-tm4070 acer-aspire-x1700 \
 	alienware-m15x \
 	apple-imac24 apple-macbook apple-macbook3_1 \
 	arima-820di1 \
