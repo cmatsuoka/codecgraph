@@ -222,4 +222,4 @@ Node 0x27 [Pin Complex] wcaps 0x400000: Mono
 Node 0x28 [Volume Knob Widget] wcaps 0x600000: Mono
   Volume-Knob: delta=1, steps=127, direct=1, val=127
   Connection: 2
-     0
+     0x10 0x11
