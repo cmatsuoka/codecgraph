@@ -25,6 +25,7 @@ Clevo M720SR			1558:0722	Realtek ALC883
 Compal JFT02			14c0:0023	Realtek ALC268
 Corrino 691SR			14c0:0026	Realtek ALC268
 Dell Inspiron 530		1028:020d	Realtek ALC888
+Dell Inspiron 6400		1028:01bd	SigmaTel STAC9200
 Dell Latitude 120L		1028:01cb	SigmaTel STAC9200
 Dell Latitude D520		1028:01d4	SigmaTel STAC9200
 Dell Latitude D620		1028:01c2	SigmaTel STAC9200

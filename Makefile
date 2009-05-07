@@ -14,7 +14,7 @@ samples = \
 	clevo-m540se clevo-m720r clevo-m720sr \
 	compal-jft02 \
 	corrino-691sr \
-	dell-inspiron-530 \
+	dell-inspiron-530 dell-inspiron-6400 \
 	dell-latitude-120l dell-latitude-d520 dell-latitude-d620 \
 	dell-latitude-d820 \
 	dell-precision-490 \
