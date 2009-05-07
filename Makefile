@@ -26,7 +26,7 @@ samples = \
 	hp-atlantis hp-spartan hp-victoria hp-spartan-ng \
 	hp-nx7400 \
 	hp-samba hp-nettle hp-lucknow \
-	hp-pavilion-dv9782eg hp-pavilion-tx1420us \
+	hp-pavilion-dv9782eg hp-pavilion-tx1420us hp-pavilion-dv7 \
 	intel-dg965ss intel-dp965lt \
 	lenovo-3000-n100 lenovo-thinkpad-t60 lenovo-thinkpad-t61 lenovo-f41a \
 	lenovo-w500 \
