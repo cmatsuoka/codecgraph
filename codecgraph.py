@@ -453,6 +453,8 @@ class CodecInfo:
 					sys.stderr.write("Warning: line %d ignored: %s\n" % (line, item))
 			except:
 				sys.stderr.write('Exception around line %d\n' % (line))
+				sys.stderr.write('item: %r\n' % (item))
+				sys.stderr.write('subitems: %r\n' % (subitems))
 				raise
 
 		self.create_out_lists()
