@@ -33,6 +33,7 @@ samples = \
 	lg-lw20 lg-lw60 lg-le50 lg-p300 \
 	medion-rim2050 \
 	msi-ms-7267 msi-p35-neo msi-k9n6sgm-v \
+	panasonic-cf52-toughbook \
 	quanta-il1 \
 	samsung-q45 \
 	shuttle-xpc-sg33g5m \
