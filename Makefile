@@ -13,6 +13,7 @@ samples = \
 	asus-w2p asus-w5f asus-x55sv asus-f6s0 asus-a6jc-q077 \
 	clevo-m540se clevo-m720r clevo-m720sr \
 	compal-jft02 \
+	compaq-presario-f755la \
 	corrino-691sr \
 	dell-inspiron-530 dell-inspiron-6400 \
 	dell-latitude-120l dell-latitude-d520 dell-latitude-d620 \
