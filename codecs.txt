@@ -81,6 +81,7 @@ NEC M370			1462:401b	Realtek ALC888
 Panasonic CF-52 Toughbook	10f7:8338	Analog Devices AD1883
 Quanta IL1			152d:0771	Realtek ALC267
 Samsung Q45			144d:c510	Realtek ALC262
+Samsung X60 Student Edition	144d:c023	Analog Devices AD1986A
 Shuttle XPC SG33G5M		1297:3106	Realtek ALC888
 Sony VAIO FE41E			104d:81ef	SigmaTel STAC9872AK
 Sony VAIO SZ110			?		SigmaTel ID 7661

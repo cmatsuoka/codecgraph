@@ -41,7 +41,7 @@ samples = \
 	nec-m370 \
 	panasonic-cf52-toughbook \
 	quanta-il1 \
-	samsung-q45 \
+	samsung-q45 samsung-x60-student-edition \
 	shuttle-xpc-sg33g5m \
 	sony-vaio-sz110 sony-vaio-vgn-s5vpb sony-vaio-vgc-rc102 \
 	sony-vaio-vgn-g21xp sony-vaio-fe41e \
