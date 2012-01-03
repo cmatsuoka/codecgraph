@@ -6,6 +6,7 @@ Alienware m15x			152d:0770	Realtek ALC885
 Apple iMac24			?		Realtek ALC885
 Apple MacBook			8384:7680	SigmaTel STAC9221 A1
 Apple MacBook3.1		106b:00a1	Realtek ALC885
+Apple MacBookAir1,1		106b:00a2	Realtek ALC889A
 Arima 820DI1			161f:2054	Realtek ALC883
 Asus A6JC-Q077H			1043:1123	Realtek ALC880
 Asus Eeepc 701			1043:82a1	Realtek ALC662 rev1

@@ -5,7 +5,7 @@ samples = \
 	abit-kn9-ultra \
 	acer-tm4070 acer-aspire-x1700 \
 	alienware-m15x \
-	apple-imac24 apple-macbook apple-macbook3_1 \
+	apple-imac24 apple-macbook apple-macbook3_1 apple-macbookair1,1 \
 	arima-820di1 \
 	asus-eeepc-701 \
 	asus-m2nbp-vm asus-m2npv-vm asus-p5b-deluxe-wifi asus-m2a-vm-hdmi \
