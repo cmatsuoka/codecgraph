@@ -18,6 +18,7 @@ Asus P5B Deluxe-Wifi		1043:81ec	Analog Devices AD1988B
 Asus P5GC-MX			1043:?		Realtek ALC662 rev1
 Asus P5KC			1043:829f	Realtek ALC883
 Asus P5LD2-VM			?		Realtek ALC882
+Asus P5N-E SLI			1043:8249	Realtek ALC883
 Asus P5QL 			1043:8346	VIA VT1708S
 Asus W2P			1043:1974	Realtek ALC882
 Asus W5F			1043:1263	Realtek ALC660

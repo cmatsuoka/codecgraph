@@ -10,6 +10,7 @@ samples = \
 	asus-eeepc-701 \
 	asus-m2nbp-vm asus-m2npv-vm asus-p5b-deluxe-wifi asus-m2a-vm-hdmi \
 	asus-p5ld2-vm asus-p5gc-mx asus-m2n-vm-dvi asus-p5kc asus-p5ql \
+	asus-p5n-e-sli \
 	asus-w2p asus-w5f asus-x55sv asus-f6s0 asus-a6jc-q077 \
 	classmate-pc-2nd-gen \
 	clevo-m540se clevo-m720r clevo-m720sr \
