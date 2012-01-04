@@ -57,6 +57,7 @@ HP Nettle			103c:2a61	Realtek ALC888
 HP NX7400			103c:30a2	Analog Devices AD1981
 HP Pavillion dv9782eg		103c:30cf	Conexant ID 5051
 HP Pavillion DV6330EA 		103c:30bb	Conexant CX20549 (Venice)
+HP Pavillion DV6535EP		103c:30cf	Conexant CX20549 (Venice)
 HP Pavilion DV7			103c:30f4	IDT 92HD71B7X
 HP Samba			103c:2a4f	Realtek ALC888
 HP Spartan			103c:30d9	Conexant CX20549 (Venice)
