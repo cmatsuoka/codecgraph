@@ -76,6 +76,7 @@ Intel DG965SS			8086:2114	SigmaTel STAC9227
 Intel DP965LT			8086:2111	SigmaTel STAC9227
 Lenovo 3000 N100		17aa:2066	Analog Devices AD1986A
 Lenovo 3000 N500		17aa:3a0d	Conexant CX20561 (Hermosa)
+Lenovo E680A			17aa:2075	Conexant CX20549 (Venice)
 Lenovo F41A			17aa:384e	Realtek ALC262
 Lenovo Ideapad Y430		17aa:3a0d	Conexant CX20561 (Hermosa)
 Lenovo Thinkpad SL500		17aa:20f2	Conexant CX20561 (Hermosa)

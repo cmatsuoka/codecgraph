@@ -41,6 +41,7 @@ samples = \
 	intel-dg965ss intel-dp965lt \
 	lenovo-3000-n100 \
 	lenovo-3000-n500 \
+	lenovo-e680a \
 	lenovo-thinkpad-t60 lenovo-thinkpad-t61 lenovo-f41a \
 	lenovo-thinkpad-sl500 lenovo-w500 lenovo-ideapad-y430 \
 	lg-lw20 lg-lw60 lg-le50 lg-p300 \
