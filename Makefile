@@ -59,7 +59,7 @@ samples = \
 	sony-vaio-sz110 sony-vaio-vgn-s5vpb sony-vaio-vgc-rc102 \
 	sony-vaio-vgn-g21xp sony-vaio-fe41e \
 	toshiba-satellite-p105 toshiba-qosmio-f30-111 \
-	toshiba-equium-l30149 toshiba-tecra-m9 \
+	toshiba-equium-l30149 toshiba-tecra-m9 toshiba-nb200 \
 	uniwill-m30
 
 txtfiles = $(addprefix samples/, $(addsuffix .txt, $(samples)))

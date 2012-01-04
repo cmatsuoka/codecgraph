@@ -109,6 +109,7 @@ Sony VAIO VGC-RC102		104d:81e7	SigmaTel CXD9872RD/K
 Sony VAIO VGN-G21XP		104d:9026	Realtek ALC262
 Sony VAIO VGN S5VPB		?		Realtek ALC260
 Toshiba Equium L30-149		1179:ff31	Realtek ALC861-VD
+Toshiba NB200			1179:ff6e	Realtek ALC272
 Toshiba Qosmio F30-111		1179:0001	SigmaTel ID 7691
 Toshiba Satellite P105		1179:ff31	Conexant CX20551 (Waikiki)
 Toshiba Tecra M9		1179:0001	Realtek ALC262
