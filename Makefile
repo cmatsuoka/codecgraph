@@ -23,6 +23,7 @@ samples = \
 	dell-latitude-d820 \
 	dell-precision-490 \
 	dell-studio-15 \
+	dell-vostro-1700 \
 	dell-xps-m1330 \
 	ecs-ka3-mvp \
 	everex-cloudbook \
