@@ -1,5 +1,6 @@
 Abit KN9 Ultra			147b:1c20	Realtek ALC883
 Acer Aspire 5520		1025:0126	Realtek ALC268
+Acer Aspire 5920G		1025:0121	Realtek ALC888
 Acer Aspire 6920G		1025:0146	Realtek ALC889
 Acer Aspire X1700		10de:07fc	Realtek ALC888
 Acer TM4070			1025:009e	Realtek ALC883
