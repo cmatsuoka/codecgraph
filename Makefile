@@ -9,6 +9,7 @@ samples = \
 	apple-imac24 apple-macbook apple-macbook3_1 apple-macbookair1,1 \
 	apple-macbookpro4,1 \
 	arima-820di1 \
+	asrock-h55m \
 	asus-eeepc-701 \
 	asus-m2nbp-vm asus-m2npv-vm asus-p5b-deluxe-wifi asus-m2a-vm-hdmi \
 	asus-m4a78-pro \
