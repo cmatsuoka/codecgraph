@@ -35,7 +35,7 @@ def indentlevel(line):
 
 def parse_item(level, lines):
 	"""Read a line and corresponding indented lines"""
-	item = lines.pop(0).rstrip('\r\n').lstrip(' ')
+	item = lines.pop(0).rstrip(' \r\n').lstrip(' ')
 	subitems = list(parse_items(level, lines))
 	return item,subitems
 
