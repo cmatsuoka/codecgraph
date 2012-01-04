@@ -75,6 +75,7 @@ thumbs: png
 	done
 
 out/%.dot: samples/%.txt codecgraph.py
+	@echo -e '\n\x1b[1mGenerate graph for $*\x1b[0m'
 	./codecgraph.py $< > $@
 
 %.ps: %.dot
