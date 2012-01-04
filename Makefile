@@ -49,6 +49,7 @@ samples = \
 	lg-lw20 lg-lw60 lg-le50 lg-p300 \
 	medion-rim2050 \
 	msi-ms-7267 msi-p35-neo msi-k9n6sgm-v \
+	msi-p55-cd53-_ms-7586_ \
 	nec-m370 \
 	panasonic-cf-52-toughbook \
 	quanta-il1 \
