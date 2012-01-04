@@ -1,8 +1,14 @@
 #!/usr/bin/perl
 
 $\ = "\n";
+@idfiles = ("/usr/share/misc/pci.ids", "/usr/share/hwdata/pci.ids");
 
-open FILE, "/usr/share/misc/pci.ids";
+foreach (@idfiles) {
+	$idfile = $_ if (-f $_);
+}
+
+
+open FILE, $idfile;
 while (<FILE>) {
 	s!#.*!!;
 	s!\s*$!!;
