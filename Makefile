@@ -7,6 +7,7 @@ samples = \
 	acer-aspire-x1700 acer-tm4070 \
 	alienware-m15x \
 	apple-imac24 apple-macbook apple-macbook3_1 apple-macbookair1,1 \
+	apple-macbookpro4,1 \
 	arima-820di1 \
 	asus-eeepc-701 \
 	asus-m2nbp-vm asus-m2npv-vm asus-p5b-deluxe-wifi asus-m2a-vm-hdmi \
