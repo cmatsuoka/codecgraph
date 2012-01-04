@@ -18,7 +18,7 @@ samples = \
 	compal-jft02 \
 	compaq-presario-f755la \
 	corrino-691sr \
-	dell-inspiron-530 dell-inspiron-6400 \
+	dell-inspiron-530 dell-inspiron-580 dell-inspiron-6400 \
 	dell-latitude-120l dell-latitude-d520 dell-latitude-d620 \
 	dell-latitude-d820 \
 	dell-precision-490 \

@@ -35,6 +35,7 @@ Compal JFT02			14c0:0023	Realtek ALC268
 Compaq Presario F755LA		103c:30ea	Conexant CX20561 (Hermosa)
 Corrino 691SR			14c0:0026	Realtek ALC268
 Dell Inspiron 530		1028:020d	Realtek ALC888
+Dell Inspiron 580		1028:0438	Realtek ALC887
 Dell Inspiron 6400		1028:01bd	SigmaTel STAC9200
 Dell Latitude 120L		1028:01cb	SigmaTel STAC9200
 Dell Latitude D520		1028:01d4	SigmaTel STAC9200
