@@ -32,7 +32,7 @@ samples = \
 	hp-nx7400 \
 	hp-samba hp-nettle hp-lucknow \
 	hp-pavilion-dv9782eg hp-pavilion-tx1420us hp-pavilion-dv7 \
-	hp-pavillion-dv6330ea hp-pavillion-dv6535ep \
+	hp-pavilion-dv6330ea hp-pavilion-dv6535ep \
 	intel-dg965ss intel-dp965lt \
 	lenovo-3000-n100 lenovo-thinkpad-t60 lenovo-thinkpad-t61 lenovo-f41a \
 	lenovo-thinkpad-sl500 lenovo-w500 lenovo-ideapad-y430 \
@@ -40,7 +40,7 @@ samples = \
 	medion-rim2050 \
 	msi-ms-7267 msi-p35-neo msi-k9n6sgm-v \
 	nec-m370 \
-	panasonic-cf52-toughbook \
+	panasonic-cf-52-toughbook \
 	quanta-il1 \
 	samsung-q45 samsung-x60-student-edition \
 	shuttle-xpc-sg33g5m \
