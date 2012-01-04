@@ -23,6 +23,7 @@ samples = \
 	dell-latitude-d820 \
 	dell-precision-490 \
 	dell-studio-15 \
+	dell-xps-m1330 \
 	everex-cloudbook \
 	fujitsu-siemens-amilo-pi-1505 \
 	gateway-mt3707 gateway-mp6954 \
