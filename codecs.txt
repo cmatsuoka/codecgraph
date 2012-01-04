@@ -45,6 +45,7 @@ Dell Latitude D820		1028:01cc	SigmaTel STAC9200
 Dell Precision 490		1028:01c1	SigmaTel STAC9200
 Dell Studio 15			1028:0254	IDT 92HD73C1X5
 Dell XPS M1330			1028:0209	SigmaTel STAC9228
+ECS KA3 MVP			1019:2133	Realtek ALC883
 Everex Cloudbook		1509:2f07	VIA VT1708
 Fujitsu Siemens Amilo Pi 1505	1734:10c7	Realtek ALC861
 Gateway MP6954			107b:0366	SigmaTel STAC9250
