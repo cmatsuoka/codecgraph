@@ -37,7 +37,9 @@ samples = \
 	hp-pavilion-dv9782eg hp-pavilion-tx1420us hp-pavilion-dv7 \
 	hp-pavilion-dv6330ea hp-pavilion-dv6535ep \
 	intel-dg965ss intel-dp965lt \
-	lenovo-3000-n100 lenovo-thinkpad-t60 lenovo-thinkpad-t61 lenovo-f41a \
+	lenovo-3000-n100 \
+	lenovo-3000-n500 \
+	lenovo-thinkpad-t60 lenovo-thinkpad-t61 lenovo-f41a \
 	lenovo-thinkpad-sl500 lenovo-w500 lenovo-ideapad-y430 \
 	lg-lw20 lg-lw60 lg-le50 lg-p300 \
 	medion-rim2050 \
