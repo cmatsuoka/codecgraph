@@ -16,6 +16,7 @@ Asus M2N68-VM			1043:8345	VIA VT1708B 8-Ch
 Asus M2NBP-VM			1043:81b3	Analog Devices AD1986A
 Asus M2NPV-VM			?		Analog Devices AD1986A
 Asus M2N-VM DVI			1043:8290	Realtek ALC662 rev1
+Asus M4A78 Pro			1043:8346	VIA VT1708S
 Asus P5B Deluxe-Wifi		1043:81ec	Analog Devices AD1988B
 Asus P5GC-MX			1043:?		Realtek ALC662 rev1
 Asus P5KC			1043:829f	Realtek ALC883
