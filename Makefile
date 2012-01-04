@@ -26,7 +26,7 @@ samples = \
 	everex-cloudbook \
 	fujitsu-siemens-amilo-pi-1505 \
 	gateway-mt3707 gateway-mp6954 \
-	gigabyte-ma790fx-ds5 gigabyte-ga965p-ds4 \
+	gigabyte-ma790fx-ds5 gigabyte-ga965p-ds4 gigabyte-ga-p43t-es3g \
 	hp-dc5750 hp-dx2200 hp-dx2250 \
 	hp-atlantis hp-spartan hp-victoria hp-spartan-ng \
 	hp-nx7400 \
