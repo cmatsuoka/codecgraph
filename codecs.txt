@@ -49,6 +49,7 @@ Dell XPS M1330			1028:0209	SigmaTel STAC9228
 ECS KA3 MVP			1019:2133	Realtek ALC883
 Everex Cloudbook		1509:2f07	VIA VT1708
 Fujitsu Siemens Amilo Pi 1505	1734:10c7	Realtek ALC861
+Fujitsu Siemens Esprimo U9200	1734:110f	Realtek ALC262
 Gateway MP6954			107b:0366	SigmaTel STAC9250
 Gateway MT3707			107b:0318	SigmaTel STAC9200
 Gigabyte MA790FX-DS5		1458:a022	Realtek ALC885
