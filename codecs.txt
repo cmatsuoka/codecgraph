@@ -32,6 +32,7 @@ Asus P5Q Pro			1043:82fe	Realtek ALC1200
 Asus P5Q Deluxe			1043:8311	Analog Devices AD1989B
 Asus P5QL 			1043:8346	VIA VT1708S
 Asus P5Q3 Deluxe WiFi		1043:8311	Analog Devices ID 989b
+Asus P6T			1043:8357	Realtek ALC1200
 Asus W2P			1043:1974	Realtek ALC882
 Asus W5F			1043:1263	Realtek ALC660
 Asus X55Sv			1043:1765	Realtek ALC888
