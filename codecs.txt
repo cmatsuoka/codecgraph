@@ -61,6 +61,7 @@ Gigabyte MA790FX-DS5		1458:a022	Realtek ALC885
 Gigabyte GA965P-DS4		1458:a002	Realtek ALC888
 Gigabyte GA-P43T-ES3G		1458:a002	Realtek ID 892
 HP Atlantis			103c:30b7	Conexant CXT5045
+HP Compaq 6720s			103c:30d8	Analog Devices AD1981
 HP DC5750			103c:280a	Realtek ALC260
 HP DX2200			1462:7254	Realtek ALC862
 HP DX2250			1462:7297	Realtek ALC862

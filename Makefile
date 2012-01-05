@@ -37,6 +37,7 @@ samples = \
 	gigabyte-ma790fx-ds5 gigabyte-ga965p-ds4 gigabyte-ga-p43t-es3g \
 	hp-dc5750 hp-dx2200 hp-dx2250 \
 	hp-atlantis hp-spartan hp-victoria hp-spartan-ng \
+	hp-compaq-6720s \
 	hp-nx7400 \
 	hp-samba hp-nettle hp-lucknow \
 	hp-pavilion-dv9782eg hp-pavilion-tx1420us hp-pavilion-dv7 \
