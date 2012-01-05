@@ -2,7 +2,7 @@ PREFIX = /usr/local
 DOTTY = dot
 
 samples = \
-	abit-kn9-ultra \
+	abit-kn9-ultra abit-i-41cv \
 	acer-aspire-5520 acer-aspire-5920g acer-aspire-6920g \
 	acer-aspire-x1700 acer-tm4070 \
 	alienware-m15x \
