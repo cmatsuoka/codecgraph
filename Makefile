@@ -14,7 +14,7 @@ samples = \
 	asus-m2nbp-vm asus-m2npv-vm asus-p5b-deluxe-wifi asus-m2a-vm-hdmi \
 	asus-m4a78-pro \
 	asus-p5ld2-vm asus-p5gc-mx asus-m2n-vm-dvi asus-p5kc asus-p5ql \
-	asus-p5n-e-sli asus-p5q3-deluxe-wifi asus-p5q-pro \
+	asus-p5n-e-sli asus-p5q3-deluxe-wifi asus-p5q-pro asus-p5q-deluxe \
 	asus-p7p55d-pro \
 	asus-w2p asus-w5f asus-x55sv asus-f6s0 asus-a6jc-q077 asus-m2n68-vm \
 	classmate-pc-2nd-gen \
