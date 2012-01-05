@@ -50,7 +50,7 @@ samples = \
 	lg-lw20 lg-lw60 lg-le50 lg-p300 \
 	medion-rim2050 \
 	msi-ms-7267 msi-p35-neo msi-k9n6sgm-v \
-	msi-p55-cd53-(ms-7586) \
+	msi-p55-cd53-_ms-7586_ \
 	nec-m370 \
 	panasonic-cf-52-toughbook \
 	quanta-il1 \
@@ -88,16 +88,16 @@ thumbs: png
 
 out/%.dot: samples/%.txt codecgraph.py
 	@echo -e '\n\x1b[1mGenerate graph for $*\x1b[0m'
-	./codecgraph.py "$<" > "$@"
+	./codecgraph.py $< > $@
 
 %.ps: %.dot
-	$(DOTTY) -Tps -o "$@" "$<"
+	$(DOTTY) -Tps -o $@ $<
 
 %.png: %.dot
-	$(DOTTY) -Tpng -o "$@" "$<"
+	$(DOTTY) -Tpng -o $@ $<
 
 %.svg: %.dot
-	$(DOTTY) -Tsvg -o "$@" "$<"
+	$(DOTTY) -Tsvg -o $@ $<
 
 clean:
 	rm -f $(psfiles)
