@@ -55,6 +55,7 @@ samples = \
 	msi-ms-7267 msi-p35-neo msi-k9n6sgm-v \
 	msi-p55-cd53-_ms-7586_ \
 	nec-m370 \
+	packard-bell-easynote-ts11hr-uk \
 	panasonic-cf-52-toughbook \
 	quanta-il1 \
 	samsung-q45 samsung-x60-student-edition \
