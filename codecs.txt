@@ -107,6 +107,7 @@ NEC M370			1462:401b	Realtek ALC888
 Packard Bell Easynote TS11HR-UK	1025:0511	Realtek ALC271X
 Panasonic CF-52 Toughbook	10f7:8338	Analog Devices AD1883
 Quanta IL1			152d:0771	Realtek ALC267
+QEMU 0.15			1af4:1100	Generic 1af4 ID 20
 Samsung Q45			144d:c510	Realtek ALC262
 Samsung X60 Student Edition	144d:c023	Analog Devices AD1986A
 Shuttle XPC SG33G5M		1297:3106	Realtek ALC888
