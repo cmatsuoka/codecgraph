@@ -77,6 +77,7 @@ dot: $(dotfiles)
 ps: $(psfiles)
 png: $(pngfiles)
 svg: $(svgfiles)
+	cp SVGPan.js out/
 
 install:
 	install -m755 -D codecgraph $(DESTDIR)$(PREFIX)/bin/codecgraph
@@ -101,6 +102,7 @@ out/%.dot: samples/%.txt codecgraph.py
 
 %.svg: %.dot
 	$(DOTTY) -Tsvg -o $@ $<
+	perl -pi -e 's|(^<svg).*|$$1|;s|.*?(xmlns.*)|$$1\n<script xlink:href="SVGPan.js"/>|' $@ 
 
 clean:
 	rm -f $(psfiles)
