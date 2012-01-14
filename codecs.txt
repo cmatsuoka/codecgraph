@@ -83,6 +83,7 @@ HP Victoria			103c:30d5	Conexant CX20549 (Venice)
 HP Pavilion tx1420us		103c:30bf	Realtek ALC861-VD
 Intel DG965SS			8086:2114	SigmaTel STAC9227
 Intel DP965LT			8086:2111	SigmaTel STAC9227
+Intel Cougarpoint HDMI		8086:0101	Intel CougarPoint HDMI
 Lenovo 3000 N100		17aa:2066	Analog Devices AD1986A
 Lenovo 3000 N500		17aa:3a0d	Conexant CX20561 (Hermosa)
 Lenovo E680A			17aa:2075	Conexant CX20549 (Venice)

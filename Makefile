@@ -44,6 +44,7 @@ samples = \
 	hp-samba hp-nettle hp-lucknow \
 	hp-pavilion-dv9782eg hp-pavilion-tx1420us hp-pavilion-dv7 \
 	hp-pavilion-dv6330ea hp-pavilion-dv6535ep \
+	intel-cougarpoint-hdmi \
 	intel-dg965ss intel-dp965lt \
 	lenovo-3000-n100 \
 	lenovo-3000-n500 \
