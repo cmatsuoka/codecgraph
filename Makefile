@@ -59,7 +59,7 @@ samples = \
 	packard-bell-easynote-ts11hr-uk \
 	panasonic-cf-52-toughbook \
 	quanta-il1 \
-	qemu-0.15 \
+	qemu-0_15 \
 	samsung-q45 samsung-x60-student-edition \
 	shuttle-xpc-sg33g5m \
 	sony-vaio-sz110 sony-vaio-vgn-s5vpb sony-vaio-vgc-rc102 \
