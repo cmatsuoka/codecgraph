@@ -16,5 +16,6 @@
   make svg
   rm -f htdocs/out/*
   cp out/*svg htdocs/out/
+  cp out/*js htdocs/out/
 )
 
