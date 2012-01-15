@@ -18,7 +18,7 @@ samples = \
 	asus-p6t \
 	asus-p7p55d-pro \
 	asus-w2p asus-w5f asus-x55sv asus-f6s0 asus-a6jc-q077 asus-m2n68-vm \
-	classmate-pc-2nd-gen \
+	classmatepc-2nd-gen \
 	clevo-m540se clevo-m720r clevo-m720sr \
 	compal-jft02 \
 	compaq-presario-f755la \
