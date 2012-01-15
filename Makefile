@@ -30,6 +30,7 @@ samples = \
 	dell-studio-15 \
 	dell-vostro-1700 \
 	dell-xps-m1330 \
+	dell-xps-l502x \
 	ecs-ka3-mvp \
 	everex-cloudbook \
 	fujitsu-siemens-amilo-pi-1505 \
